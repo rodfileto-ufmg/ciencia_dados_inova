@@ -57,7 +57,11 @@ Em paralelo, novas ferramentas computacionais oferecem grandes possibilidades na
 
 ```{r echo=FALSE, fig.align='center', out.width='50%'}
 
+<<<<<<< HEAD
 knitr::include_graphics("images/ciencia_dados_triade.JPG")
+=======
+knitr::include_graphics("ciencia_dados_triade.JPG")
+>>>>>>> 047593aaeacdf1d14ff22444fa653089ab51a85e
 
 ```
 
