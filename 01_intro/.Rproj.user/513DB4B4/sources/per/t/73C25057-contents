@@ -1,0 +1,114 @@
+---
+title: ""
+author: ""
+# date: March 22, 2005
+output: 
+  revealjs::revealjs_presentation:
+    self_contained: false
+    css: styles.css
+    reveal_plugins: ["zoom", "menu", "notes"]
+    reveal_options:
+      width: 960
+      height: 700
+      slideNumber: true
+      controls: false
+bibliography: references.bib
+---
+
+```{r include=FALSE}
+
+library(fontawesome)
+
+```
+
+<center> UNIVERSIDADE FEDERAL DE MINAS GERAIS </center>
+
+<center> <medium> Centro de Desenvolvimento e Planejamento Regional </medium> </center>
+
+<center> <medium> Programa de Pós-Graduação em Economia </medium> </center>
+
+<br>
+
+<center> Disciplina: CIÊNCIA DE DADOS PARA INOVAÇÃO </center>
+
+<br>
+
+<br>
+
+<center>Semestre 2022/1</center>
+
+<center> Rodrigo Fileto Cuerci Maciel</center>
+
+# Contexto
+
+Iniciativas como a **Ciência Aberta** e **Dados Abertos Governamentais** disponibilizam quantidade massiva de informações para pesquisadores e para o público em geral.
+
+Em paralelo, novas ferramentas computacionais oferecem grandes possibilidades na extração sistemática e massiva de dados para a análise de fenômenos sociais.
+
+Desse modo, esse curso objetiva apresentar aos estudantes e pesquisadores um panorama de ferramentas que podem ser utilizadas para análise de indicadores e políticas de inovação.
+
+# Objetivos
+
+-   Apresentar uma introdução ao R, mais especificamente ao pacote Tidyverse;
+
+-   Apresentar técnicas computacionais de análise de dados associadas à constructos teóricos dos estudos de inovação;
+
+-   Suporte técnico de processamento e análise de dados para os projetos individuais de cada aluno.
+
+# Tópicos
+
+1.  Introdução aos estudos de inovação;
+
+2.  Coleta, processamento e preparação de dados;
+
+3.  Ciênciometria e análise de patentes;
+
+4.  Análise de Compras Públicas;
+
+5.  Ferramentas de análise de big-data;
+
+6.  Comunicando os resultados.
+
+# Configuração de software
+
+-   Instalação do R
+
+-   Instalação do Rstudio
+
+-   Instalação do pacote Tidyverse
+
+# Convergência de disciplinas
+
+```{r echo=FALSE, fig.align='center', out.width='50%'}
+
+knitr::include_graphics("ciencia_dados_triade.JPG")
+
+```
+
+# Ou nem tanto?
+
+```{r echo=FALSE, fig.align='center', out.width='50%'}
+
+knitr::include_graphics("algebra_1.jpeg")
+
+```
+
+<aside class="notes">
+
+Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+
+</aside>
+
+# Fontes alternativas de informações
+
+`r fa("twitter", fill = "steelblue")` Medidas de felicidade [@dodds2011], cálculos alternativos de impacto científico ;
+
+`r fa("linkedin", fill = "steelblue")` Mobilidade de mão de obra e concentração de conhecimento em alta tecnologia; [@riebe2020; @park2019]
+
+------------------------------------------------------------------------
+
+`r fa("lightbulb", fill = "steelblue")` Medindo índice de pobreza a partir do consumo de energia elétrica [@steele2017];
+
+`r fa("tools", fill = "steelblue")` Minerar páginas da web para construir bases de dados estruturadas. Exemplo: Tratados Internacionais de Ciência e Tecnologia dos Estados Unidos.
+
+# Referências

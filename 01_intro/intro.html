@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>intro.knit</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="intro_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+
+<link rel="stylesheet" href="intro_files/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="styles.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <script src="intro_files/header-attrs-2.12/header-attrs.js"></script>
+    <link href="intro_files/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+    <link href="intro_files/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level2">
+
+<center>
+UNIVERSIDADE FEDERAL DE MINAS GERAIS
+</center>
+<center>
+<medium> Centro de Desenvolvimento e Planejamento Regional </medium>
+</center>
+<p><br></p>
+<center>
+Disciplina: CIÊNCIA DE DADOS PARA INOVAÇÃO
+</center>
+<p><br></p>
+<p><br></p>
+<center>
+Semestre 2022/1
+</center>
+<center>
+Professor: Rodrigo Fileto Cuerci Maciel
+</center>
+</section>
+<section>
+<section id="aula-introdutória" class="title-slide slide level1">
+<h1>Aula Introdutória</h1>
+<ul>
+<li>Visão geral da disciplina;</li>
+<li>Evolução da análise de dados em estudos de inovação;</li>
+</ul>
+</section>
+<section id="contexto" class="slide level2">
+<h2>Contexto</h2>
+<p>Iniciativas como a <strong>Ciência Aberta</strong> e <strong>Dados Abertos Governamentais</strong> disponibilizam quantidade massiva de informações para pesquisadores e para o público em geral.</p>
+<p>Em paralelo, novas ferramentas computacionais oferecem grandes possibilidades na extração sistemática e massiva de dados para a análise de fenômenos sociais.</p>
+</section>
+<section id="objetivos" class="slide level2">
+<h2>Objetivos</h2>
+<ul>
+<li>Apresentar um panorama de ferramentas que podem ser utilizadas para análise de indicadores e políticas de inovação.</li>
+</ul>
+</section>
+<section id="ciência-de-dados-convergência-de-disciplinas" class="slide level2">
+<h2>Ciência de Dados: Convergência de disciplinas</h2>
+<p><img src="images/ciencia_dados_triade.JPG" width="50%" style="display: block; margin: auto;" /></p>
+<p>Fonte: <span class="citation" data-cites="armengaud2017">Armengaud et al. (2017)</span></p>
+</section>
+<section id="tópicos" class="slide level2">
+<h2>Tópicos</h2>
+<ol type="1">
+<li><p>Evolução da análise de dados em estudos de inovação;</p></li>
+<li><p>Coleta, processamento e preparação de dados;</p></li>
+<li><p>Ciênciometria e análise de patentes;</p></li>
+<li><p>Análise de Compras Públicas;</p></li>
+<li><p>Ferramentas de análise de big-data;</p></li>
+<li><p>Comunicando os resultados.</p></li>
+</ol>
+</section>
+<section id="configuração-de-software" class="slide level2">
+<h2>Configuração de software</h2>
+<p>Informações sobre a Instalação do R e Rstudio podem ser acessadas em (<a href="https://rstudio-education.github.io/hopr/starting.html" class="uri">https://rstudio-education.github.io/hopr/starting.html</a>)</p>
+</section></section>
+<section>
+<section id="economia-da-inovação" class="title-slide slide level1">
+<h1>Economia da Inovação</h1>
+<p>“O impulso fundamental que configura e mantém a máquina capitalista em movimento vem dos novos bens de consumo, novos métodos de produção ou transporte, os novos mercados, as novas formas de organização industrial que a empreitada capitalista cria” <span class="citation" data-cites="schumpeter2008">(Schumpeter 2008, 83)</span></p>
+</section>
+<section class="slide level2">
+
+<p>Trata-se da <em>destruição criativa,</em> fruto das constantes inovações que deixam obsoletos processos e produtos, e em alguns casos a estrutura nas quais eles assentavam sua criação e distribuição, para colocar outros em substituição. Tal processo, longe de se chegar a um estado de equilíbrio, colocaria a sociedade capitalista em constante processo de mudança.</p>
+</section></section>
+<section>
+<section id="tópicos-em-economia-da-inovação" class="title-slide slide level1">
+<h1>Tópicos em Economia da Inovação</h1>
+<iframe src="https://app.vosviewer.com/?json=https://www.dropbox.com/s/bbiev4dw7b99q7y/VOSviewer_3047647339148513852.json?dl=1" width="960" height="700" frameBorder="0" allowFullScreen>
+</iframe>
+</section>
+<section id="conceito-de-tecnologia" class="slide level2">
+<h2>Conceito de tecnologia</h2>
+<ul>
+<li><p>Tecnologia como sendo o “conhecimento sobre técnicas, enquanto as técnicas envolvem aplicações desse conhecimento em produtos, processos e métodos organizacionais” <span class="citation" data-cites="tigre2014a">(Tigre 2014, 74)</span>.</p></li>
+<li><p>Abordagem focada no conhecimento tácito e explícito;</p></li>
+<li><p>Tradução desse conhecimento em novos processos e produtos<span class="citation" data-cites="choo2003 takeuchi2008">(Choo 2003; Takeuchi and Nonaka 2008)</span>.</p></li>
+<li><p>Processo evolucionário de acumulação e apropriação de conhecimento, o que gera oportunidades mas também travamento em trajetórias tecnológicas seja para indivíduos, organizações ou países <span class="citation" data-cites="dosi1982">(Dosi 1982)</span>.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="evolução-da-análise-de-dados-em-inovação" class="title-slide slide level1">
+<h1>Evolução da análise de dados em inovação</h1>
+
+</section>
+<section id="estudos-pioneiros" class="slide level2">
+<h2>Estudos pioneiros</h2>
+<ul>
+<li>Estabelecendo a rede de publicações científicas <span class="citation" data-cites="desollaprice1965a">(De Solla Price 1965)</span></li>
+<li>Fundação do periódico <em>Scientometrics</em> em 1978.</li>
+</ul>
+</section></section>
+<section>
+<section id="fontes-alternativas-de-informações" class="title-slide slide level1">
+<h1>Fontes alternativas de informações</h1>
+<p><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> Medidas de felicidade <span class="citation" data-cites="dodds2011">(Dodds et al. 2011)</span>, cálculos alternativos de impacto científico ;</p>
+<p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg> Mobilidade de mão de obra e concentração de conhecimento em alta tecnologia; <span class="citation" data-cites="riebe2020 park2019">(Riebe, Schmid, and Reuter 2020; Park et al. 2019)</span></p>
+</section>
+<section class="slide level2">
+
+<p><svg aria-hidden="true" role="img" viewBox="0 0 352 512" style="height:1em;width:0.69em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M96.06 454.35c.01 6.29 1.87 12.45 5.36 17.69l17.09 25.69a31.99 31.99 0 0 0 26.64 14.28h61.71a31.99 31.99 0 0 0 26.64-14.28l17.09-25.69a31.989 31.989 0 0 0 5.36-17.69l.04-38.35H96.01l.05 38.35zM0 176c0 44.37 16.45 84.85 43.56 115.78 16.52 18.85 42.36 58.23 52.21 91.45.04.26.07.52.11.78h160.24c.04-.26.07-.51.11-.78 9.85-33.22 35.69-72.6 52.21-91.45C335.55 260.85 352 220.37 352 176 352 78.61 272.91-.3 175.45 0 73.44.31 0 82.97 0 176zm176-80c-44.11 0-80 35.89-80 80 0 8.84-7.16 16-16 16s-16-7.16-16-16c0-61.76 50.24-112 112-112 8.84 0 16 7.16 16 16s-7.16 16-16 16z"/></svg> Medindo índice de pobreza a partir do consumo de energia elétrica <span class="citation" data-cites="steele2017">(Steele et al. 2017)</span>;</p>
+<p><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z"/></svg> Minerar páginas da web para construir bases de dados estruturadas. Exemplo: Tratados Internacionais de Ciência e Tecnologia dos Estados Unidos.</p>
+</section></section>
+<section id="referências" class="title-slide slide level1 unnumbered">
+<h1 class="unnumbered">Referências</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-armengaud2017" class="csl-entry" role="doc-biblioentry">
+Armengaud, Eric, Christoph Sams, Georg von Falck, Georg List, Christian Kreiner, and Andreas Riel. 2017. <span>“Industry 4.0 as Digitalization over the Entire Product Lifecycle: Opportunities in the Automotive Domain.”</span> In, edited by Jakub Stolfa, Svatopluk Stolfa, Rory V. O’Connor, and Richard Messnarz, 748:334–51. Cham: Springer International Publishing. <a href="http://link.springer.com/10.1007/978-3-319-64218-5_28">http://link.springer.com/10.1007/978-3-319-64218-5_28</a>.
+</div>
+<div id="ref-choo2003" class="csl-entry" role="doc-biblioentry">
+Choo, Chun W. 2003. <em>A Organização Do Conhecimento</em>. São Paulo: Editora Senac.
+</div>
+<div id="ref-desollaprice1965a" class="csl-entry" role="doc-biblioentry">
+De Solla Price, Derek J. 1965. <span>“Networks of Scientific Papers.”</span> <em>Science</em> 149 (3683): 510–10. <a href="https://doi.org/10.1126/science.149.3683.510">https://doi.org/10.1126/science.149.3683.510</a>.
+</div>
+<div id="ref-dodds2011" class="csl-entry" role="doc-biblioentry">
+Dodds, Peter Sheridan, Kameroncker Decker Harris, Isabel M. Kloumann, Catherine A. Bliss, and Christopher M. Danforth. 2011. <span>“Temporal Patterns of Happiness and Information in a Global Social Network: Hedonometrics and Twitter.”</span> <em>PLoS ONE</em> 6 (12). <a href="https://doi.org/10.1371/journal.pone.0026752">https://doi.org/10.1371/journal.pone.0026752</a>.
+</div>
+<div id="ref-dosi1982" class="csl-entry" role="doc-biblioentry">
+Dosi, Giovanni. 1982. <span>“Technological Paradigms and Technological Trajectories: A Suggested Interpretation of the Determinants and Directions of Technical Change.”</span> <em>Research Policy</em> 11 (3): 147–62. <a href="https://doi.org/10.1016/0048-7333(82)90016-6">https://doi.org/10.1016/0048-7333(82)90016-6</a>.
+</div>
+<div id="ref-park2019" class="csl-entry" role="doc-biblioentry">
+Park, Jaehyuk, Ian B. Wood, Elise Jing, Azadeh Nematzadeh, Souvik Ghosh, Michael D. Conover, and Yong-Yeol Ahn. 2019. <span>“Global Labor Flow Network Reveals the Hierarchical Organization and Dynamics of Geo-Industrial Clusters.”</span> <em>Nature Communications</em> 10 (1): 3449. <a href="https://doi.org/10.1038/s41467-019-11380-w">https://doi.org/10.1038/s41467-019-11380-w</a>.
+</div>
+<div id="ref-riebe2020" class="csl-entry" role="doc-biblioentry">
+Riebe, Thea, Stefka Schmid, and Christian Reuter. 2020. <span>“Measuring Spillover Effects from Defense to Civilian Sectors <span></span> A Quantitative Approach Using LinkedIn.”</span> <em>Defence and Peace Economics</em>, April, 1–13. <a href="https://doi.org/10.1080/10242694.2020.1755787">https://doi.org/10.1080/10242694.2020.1755787</a>.
+</div>
+<div id="ref-schumpeter2008" class="csl-entry" role="doc-biblioentry">
+Schumpeter, Joseph A. 2008. <em>Capitalis, Socialism and Democracy</em>. 3rd ed. New York: Harperperennial Modernthought.
+</div>
+<div id="ref-steele2017" class="csl-entry" role="doc-biblioentry">
+Steele, Jessica E., Pål Roe Sundsøy, Carla Pezzulo, Victor A. Alegana, Tomas J. Bird, Joshua Blumenstock, Johannes Bjelland, et al. 2017. <span>“Mapping Poverty Using Mobile Phone and Satellite Data.”</span> <em>Journal of The Royal Society Interface</em> 14 (127): 20160690. <a href="https://doi.org/10.1098/rsif.2016.0690">https://doi.org/10.1098/rsif.2016.0690</a>.
+</div>
+<div id="ref-takeuchi2008" class="csl-entry" role="doc-biblioentry">
+Takeuchi, Hirotaka, and Ikujiro Nonaka. 2008. <em>Gestão Do Conhecimento</em>. Porto Alegre: Bookman.
+</div>
+<div id="ref-tigre2014a" class="csl-entry" role="doc-biblioentry">
+Tigre, Paulo Bastos. 2014. <em>Gestão Da Inovação: A Economia Da Tecnologia No Brasil</em>. 2ª edição. Rio de Janeiro: Elsevier.
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="intro_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="intro_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: false,
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Loop the presentation
+        loop: false,
+        // Change the presentation direction to be RTL
+        rtl: false,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+        // Transition style
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 960,
+        height: 700,
+
+        menu: {
+   
+    
+    
+    
+    
+    
+    
+ 
+          custom: false,
+          themes: false,
+          transitions: false
+        },
+
+
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'intro_files/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
+          { src: 'intro_files/reveal.js-3.3.0.1/plugin/zoom-js/zoom.js', async: true },
+          { src: 'intro_files/reveal.js-3.3.0.1/plugin/menu/menu.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>
