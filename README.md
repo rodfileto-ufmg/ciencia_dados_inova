@@ -1,1 +1,1 @@
-# ciencia_dados_inova
+# ciencia de dados para estudos em inovação
