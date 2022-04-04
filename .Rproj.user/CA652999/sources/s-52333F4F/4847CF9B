@@ -3,7 +3,11 @@
     "path": "~/Dropbox/cedeplar_posdoc/ciencia_dados/01_intro/intro.Rmd",
     "project_path": "01_intro/intro.Rmd",
     "type": "r_markdown",
+<<<<<<< HEAD
     "hash": "4087230272",
+=======
+    "hash": "3132342648",
+>>>>>>> 047593aaeacdf1d14ff22444fa653089ab51a85e
     "contents": "",
     "dirty": false,
     "created": 1642427129144.0,
@@ -12,6 +16,7 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
+<<<<<<< HEAD
         "cursorPosition": "59,32",
         "scrollLine": "43",
         "rmdVisualMode": "false",
@@ -26,6 +31,21 @@
     "collab_server": "",
     "source_window": "",
     "last_content_update": 1649090500149,
+=======
+        "cursorPosition": "85,0",
+        "scrollLine": "62",
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "rmdVisualModeLocation": "371:120"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1649090095,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1649090095214,
+>>>>>>> 047593aaeacdf1d14ff22444fa653089ab51a85e
     "read_only": false,
     "read_only_alternatives": []
 }
