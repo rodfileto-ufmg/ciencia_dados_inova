@@ -1,0 +1,3 @@
+
+
+install.packages("haozhu233-kableExtra-v0.6.0-441-ga6af5c0.tar.gz", repos = NULL, type="source")

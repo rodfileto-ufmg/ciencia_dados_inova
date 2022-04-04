@@ -1,0 +1,13 @@
+## Ou nem tanto?
+
+```{r echo=FALSE, fig.align='center', out.width='50%'}
+
+knitr::include_graphics("algebra_1.jpeg")
+
+```
+
+<center class="fragment">
+  
+  Para pesquisadores deve ser o contrário. É necessário saber pressupostos matemáticos e estatísticos das ferramentas utilizadas
+
+</center>

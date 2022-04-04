@@ -1,0 +1,70 @@
+---
+title: ""
+author: ""
+# date: March 22, 2005
+output: 
+  revealjs::revealjs_presentation:
+    self_contained: false
+    css: styles.css
+    reveal_plugins: ["zoom", "menu", "notes"]
+    reveal_options:
+      width: 960
+      height: 700
+      slideNumber: true
+      controls: false
+---
+
+```{r include=FALSE}
+
+library(kableExtra)
+
+```
+
+
+#
+
+<center> UNIVERSIDADE FEDERAL DE MINAS GERAIS </center>
+
+<center><medium> Centro de Desenvolvimento e Planejamento Regional </medium></center>
+
+<center><medium> Programa de Pós-Graduação em Economia </medium></center>
+
+<br>
+
+
+<small><center>CIÊNCIA DE DADOS PARA INOVAÇÃO</center></small>
+
+<center>Tópico: Ciênciometria</center>
+
+<br>
+
+<br>
+
+<center> Semestre 2022/1 </center>
+
+<center> Rodrigo Fileto Cuerci Maciel </center>
+
+
+# Fontes de dados
+
+
+```{r echo=FALSE}
+
+base_dados <- tibble::tibble(Natureza = c(rep("proprietária", 3), rep("aberta", 3)), "Base de Dados" = c("Web of Science", "Scopus", "Dimensions", "Scielo", "CrossRef", "Orcid"))
+
+kableExtra::kbl(base_dados) %>%
+  kable_styling() %>%
+  collapse_rows(columns = 1, valign = "middle")
+
+```
+
+
+# Temas de pesquisa em ciênciometria
+
+- Avalição de impacto de financiamento;
+- Identificação de tópicos científicos;
+- Vieses de gênero (recebimento de financiamento, tópicos de pesquisa);
+- Dados abertos em ciência;
+- Medidas de interdisciplinaridade;
+- Altimetria;
+

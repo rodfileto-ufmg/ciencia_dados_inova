@@ -1,0 +1,223 @@
+{
+    "sources": [
+        {
+            "DOI": "10.1080/10242694.2020.1755787",
+            "URL": "https://www.tandfonline.com/doi/full/10.1080/10242694.2020.1755787",
+            "author": [
+                {
+                    "family": "Riebe",
+                    "given": "Thea"
+                },
+                {
+                    "family": "Schmid",
+                    "given": "Stefka"
+                },
+                {
+                    "family": "Reuter",
+                    "given": "Christian"
+                }
+            ],
+            "container-title": "Defence and Peace Economics",
+            "id": "riebe2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        4,
+                        24
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "1-13",
+            "title": "Measuring Spillover Effects from Defense to Civilian Sectors  A Quantitative Approach Using LinkedIn",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1371/journal.pone.0026752",
+            "author": [
+                {
+                    "family": "Dodds",
+                    "given": "Peter Sheridan"
+                },
+                {
+                    "family": "Harris",
+                    "given": "Kameroncker Decker"
+                },
+                {
+                    "family": "Kloumann",
+                    "given": "Isabel M."
+                },
+                {
+                    "family": "Bliss",
+                    "given": "Catherine A."
+                },
+                {
+                    "family": "Danforth",
+                    "given": "Christopher M."
+                }
+            ],
+            "container-title": "PLoS ONE",
+            "id": "dodds2011",
+            "issue": "12",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "title": "Temporal patterns of happiness and information in a global social network: Hedonometrics and twitter",
+            "title-short": "Temporal patterns of happiness and information in a global social network",
+            "type": "article-journal",
+            "volume": "6"
+        },
+        {
+            "author": [
+                {
+                    "family": "Park",
+                    "given": "Jaehyuk"
+                }
+            ],
+            "id": "park",
+            "language": "en",
+            "page": "10",
+            "title": "Global labor flow network reveals the hierarchical organization and dynamics of geo-industrial clusters",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1038/s41467-019-11380-w",
+            "URL": "http://www.nature.com/articles/s41467-019-11380-w",
+            "author": [
+                {
+                    "family": "Park",
+                    "given": "Jaehyuk"
+                },
+                {
+                    "family": "Wood",
+                    "given": "Ian B."
+                },
+                {
+                    "family": "Jing",
+                    "given": "Elise"
+                },
+                {
+                    "family": "Nematzadeh",
+                    "given": "Azadeh"
+                },
+                {
+                    "family": "Ghosh",
+                    "given": "Souvik"
+                },
+                {
+                    "family": "Conover",
+                    "given": "Michael D."
+                },
+                {
+                    "family": "Ahn",
+                    "given": "Yong-Yeol"
+                }
+            ],
+            "container-title": "Nature Communications",
+            "id": "park2019",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        12
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "3449",
+            "title": "Global labor flow network reveals the hierarchical organization and dynamics of geo-industrial clusters",
+            "type": "article-journal",
+            "volume": "10"
+        },
+        {
+            "DOI": "10.1098/rsif.2016.0690",
+            "URL": "https://royalsocietypublishing.org/doi/10.1098/rsif.2016.0690",
+            "author": [
+                {
+                    "family": "Steele",
+                    "given": "Jessica E."
+                },
+                {
+                    "family": "Sundsøy",
+                    "given": "Pål Roe"
+                },
+                {
+                    "family": "Pezzulo",
+                    "given": "Carla"
+                },
+                {
+                    "family": "Alegana",
+                    "given": "Victor A."
+                },
+                {
+                    "family": "Bird",
+                    "given": "Tomas J."
+                },
+                {
+                    "family": "Blumenstock",
+                    "given": "Joshua"
+                },
+                {
+                    "family": "Bjelland",
+                    "given": "Johannes"
+                },
+                {
+                    "family": "Engø-Monsen",
+                    "given": "Kenth"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Montjoye",
+                    "given": "Yves-Alexandre"
+                },
+                {
+                    "family": "Iqbal",
+                    "given": "Asif M."
+                },
+                {
+                    "family": "Hadiuzzaman",
+                    "given": "Khandakar N."
+                },
+                {
+                    "family": "Lu",
+                    "given": "Xin"
+                },
+                {
+                    "family": "Wetter",
+                    "given": "Erik"
+                },
+                {
+                    "family": "Tatem",
+                    "given": "Andrew J."
+                },
+                {
+                    "family": "Bengtsson",
+                    "given": "Linus"
+                }
+            ],
+            "container-title": "Journal of The Royal Society Interface",
+            "id": "steele2017",
+            "issue": "127",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        2
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "20160690",
+            "title": "Mapping poverty using mobile phone and satellite data",
+            "type": "article-journal",
+            "volume": "14"
+        }
+    ],
+    "project_biblios": []
+}
