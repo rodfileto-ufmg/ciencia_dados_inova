@@ -125,15 +125,16 @@ Trata-se da *destruição criativa,* fruto das constantes inovações que deixam
 
 # Evolução da análise de dados em inovação
 
-## Estudos pioneiros
+## Evolução do campo
 
--   Estabelecendo a rede de publicações científicas através de pouco mais de um milhão de citações [@desollaprice1965a;@garfield1963]. Projeto financiado pela NSF e NIH;
+-   Estabelecendo a rede de publicações científicas através de pouco mais de um milhão de citações [@desollaprice1965a; @garfield1963]. Projeto financiado pela NSF e NIH;
 -   Fundação do periódico *Scientometrics* em 1978.
--   Coleção de 2000 inovações significativas com validação de especialistas tendo em vista avaliar transferência de conhecimento entre setores industriais [@pavitt1984]
+-   Coleção de 2000 inovações significativas com validação de especialistas tendo em vista avaliar transferência de conhecimento entre setores industriais [@pavitt1984];
+-   Análise de base de dados em larga escala [@small2014; @klavans2011; @boyack2014; @boyack2014a].
 
-# Fontes alternativas de informações
+# Outras fontes de informações
 
-`r fa("twitter", fill = "steelblue")` Medidas de felicidade [@dodds2011], cálculos alternativos de impacto científico ;
+`r fa("twitter", fill = "steelblue")` Medidas de felicidade a partir de dados do [twitter](https://cdanfort.w3.uvm.edu/main/hedonometrics.html) [@dodds2011];
 
 `r fa("linkedin", fill = "steelblue")` Mobilidade de mão de obra e concentração de conhecimento em alta tecnologia; [@riebe2020; @park2019]
 
