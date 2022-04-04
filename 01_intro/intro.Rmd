@@ -21,21 +21,41 @@ library(fontawesome)
 
 ```
 
-<center>UNIVERSIDADE FEDERAL DE MINAS GERAIS</center>
+<center>
 
-<center><medium> Centro de Desenvolvimento e Planejamento Regional </medium></center>
+UNIVERSIDADE FEDERAL DE MINAS GERAIS
+
+</center>
+
+<center>
+
+<medium> Centro de Desenvolvimento e Planejamento Regional </medium>
+
+</center>
 
 <br>
 
-<center>Disciplina: CIÊNCIA DE DADOS PARA INOVAÇÃO</center>
+<center>
+
+Disciplina: CIÊNCIA DE DADOS PARA INOVAÇÃO
+
+</center>
 
 <br>
 
 <br>
 
-<center>Semestre 2022/1</center>
+<center>
 
-<center>Professor: Rodrigo Fileto Cuerci Maciel</center>
+Semestre 2022/1
+
+</center>
+
+<center>
+
+Professor: Rodrigo Fileto Cuerci Maciel
+
+</center>
 
 # Aula Introdutória
 
@@ -48,7 +68,6 @@ Iniciativas como a **Ciência Aberta** e **Dados Abertos Governamentais** dispon
 
 Em paralelo, novas ferramentas computacionais oferecem grandes possibilidades na extração sistemática e massiva de dados para a análise de fenômenos sociais.
 
-
 ## Objetivos
 
 -   Apresentar um panorama de ferramentas que podem ser utilizadas para análise de indicadores e políticas de inovação.
@@ -56,6 +75,7 @@ Em paralelo, novas ferramentas computacionais oferecem grandes possibilidades na
 ## Ciência de Dados: Convergência de disciplinas
 
 ```{r echo=FALSE, fig.align='center', out.width='50%'}
+
 
 knitr::include_graphics("images/ciencia_dados_triade.JPG")
 
@@ -79,8 +99,7 @@ Fonte: @armengaud2017
 
 ## Configuração de software
 
-Informações sobre a Instalação do R e Rstudio podem ser acessadas em (https://rstudio-education.github.io/hopr/starting.html)
-
+Informações sobre a Instalação do R e Rstudio podem ser acessadas em (<https://rstudio-education.github.io/hopr/starting.html>)
 
 # Economia da Inovação
 
@@ -100,9 +119,7 @@ Trata-se da *destruição criativa,* fruto das constantes inovações que deixam
 
 -   Tecnologia como sendo o "conhecimento sobre técnicas, enquanto as técnicas envolvem aplicações desse conhecimento em produtos, processos e métodos organizacionais" [@tigre2014a, p. 74].
 
--   Abordagem focada no conhecimento tácito e explícito;
-
--   Tradução desse conhecimento em novos processos e produtos[@choo2003; @takeuchi2008].
+-   Abordagem focada no conhecimento tácito e explícito. Tradução desse conhecimento em novos processos e produtos[@choo2003; @takeuchi2008].
 
 -   Processo evolucionário de acumulação e apropriação de conhecimento, o que gera oportunidades mas também travamento em trajetórias tecnológicas seja para indivíduos, organizações ou países [@dosi1982].
 
@@ -110,8 +127,9 @@ Trata-se da *destruição criativa,* fruto das constantes inovações que deixam
 
 ## Estudos pioneiros
 
--   Estabelecendo a rede de publicações científicas [@desollaprice1965a]
+-   Estabelecendo a rede de publicações científicas através de pouco mais de um milhão de citações [@desollaprice1965a;@garfield1963]. Projeto financiado pela NSF e NIH;
 -   Fundação do periódico *Scientometrics* em 1978.
+-   Coleção de 2000 inovações significativas com validação de especialistas tendo em vista avaliar transferência de conhecimento entre setores industriais [@pavitt1984]
 
 # Fontes alternativas de informações
 
