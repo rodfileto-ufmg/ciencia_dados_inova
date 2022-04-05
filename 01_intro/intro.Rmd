@@ -70,8 +70,8 @@ Em paralelo, novas ferramentas computacionais oferecem grandes possibilidades na
 
 ## Objetivos
 
-- Apresentar técnicas para coleta automatizada de informações
-- Apresentar um panorama de ferramentas computacionais que podem ser utilizadas para análise de indicadores e políticas de inovação.
+-   Apresentar técnicas para coleta automatizada de informações
+-   Apresentar um panorama de ferramentas computacionais que podem ser utilizadas para análise de indicadores e políticas de inovação.
 
 ## Ciência de Dados: Convergência de disciplinas
 
@@ -133,6 +133,14 @@ Trata-se da *destruição criativa,* fruto das constantes inovações que deixam
 -   Coleção de 2000 inovações significativas com validação de especialistas tendo em vista avaliar transferência de conhecimento entre setores industriais [@pavitt1984];
 -   Análise de base de dados em larga escala [@small2014; @klavans2011; @boyack2014; @boyack2014a].
 
+## Fontes de dados para estudos em inovação
+
+-   Bases de publicações científicas (Web of Science, Scopus, Dimensions, Scielo, dentre outras);
+-   Bases de patentes (OCDE, US Patent Office);
+-   Bases com indicadores diversos (OCDE, IBGE);
+-   Compras Públicas (Portal da Transparência Governo Federal);
+-   Atividades legislativas (Dados da ALMG e projeto [UAIDEPUTADO](<https://www.uaideputado.app.br/>))
+
 # Outras fontes de informações
 
 `r fa("twitter", fill = "steelblue")` Medidas de felicidade a partir de dados do [twitter](https://cdanfort.w3.uvm.edu/main/hedonometrics.html) [@dodds2011];
@@ -143,6 +151,10 @@ Trata-se da *destruição criativa,* fruto das constantes inovações que deixam
 
 `r fa("lightbulb", fill = "steelblue")` Medindo índice de pobreza a partir do consumo de energia elétrica [@steele2017];
 
-`r fa("tools", fill = "steelblue")` Minerar páginas da web para construir bases de dados estruturadas. Exemplo: Tratados Internacionais de Ciência e Tecnologia dos Estados Unidos.
+`r fa("tools", fill = "steelblue")` Minerar páginas da web para construir bases de dados estruturadas. Exemplo: [Tratados Internacionais de Ciência e Tecnologia dos Estados Unidos com outros países]([https://www.state.gov/tias/](https://www.state.gov/2021-tias/)).
+
+# Para a próxima aula
+
+Leitura e execução do códigos existentes referente ao [Básico da Linguagem de Programação em R](<https://ona-book.org/the-basics-of-the-r-programming-language.html>)[@mcnulty2022].
 
 # Referências

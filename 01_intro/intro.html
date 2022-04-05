@@ -489,7 +489,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section id="objetivos" class="slide level2">
 <h2>Objetivos</h2>
 <ul>
-<li>Apresentar um panorama de ferramentas que podem ser utilizadas para análise de indicadores e políticas de inovação.</li>
+<li>Apresentar técnicas para coleta automatizada de informações</li>
+<li>Apresentar um panorama de ferramentas computacionais que podem ser utilizadas para análise de indicadores e políticas de inovação.</li>
 </ul>
 </section>
 <section id="ciência-de-dados-convergência-de-disciplinas" class="slide level2">
@@ -540,30 +541,52 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <h1>Evolução da análise de dados em inovação</h1>
 
 </section>
-<section id="estudos-pioneiros" class="slide level2">
-<h2>Estudos pioneiros</h2>
+<section id="evolução-do-campo" class="slide level2">
+<h2>Evolução do campo</h2>
 <ul>
 <li>Estabelecendo a rede de publicações científicas através de pouco mais de um milhão de citações <span class="citation" data-cites="desollaprice1965a garfield1963">(De Solla Price 1965; Garfield and Sher 1963)</span>. Projeto financiado pela NSF e NIH;</li>
 <li>Fundação do periódico <em>Scientometrics</em> em 1978.</li>
-<li>Coleção de 2000 inovações significativas com validação de especialistas tendo em vista avaliar transferência de conhecimento entre setores industriais <span class="citation" data-cites="pavitt1984">(Pavitt 1984)</span></li>
+<li>Coleção de 2000 inovações significativas com validação de especialistas tendo em vista avaliar transferência de conhecimento entre setores industriais <span class="citation" data-cites="pavitt1984">(Pavitt 1984)</span>;</li>
+<li>Análise de base de dados em larga escala <span class="citation" data-cites="small2014 klavans2011 boyack2014 boyack2014a">(Small, Boyack, and Klavans 2014; Klavans and Boyack 2011; Boyack and Klavans 2014; Boyack et al. 2014)</span>.</li>
+</ul>
+</section>
+<section id="fontes-de-dados-para-estudos-em-inovação" class="slide level2">
+<h2>Fontes de dados para estudos em inovação</h2>
+<ul>
+<li>Bases de publicações científicas (Web of Science, Scopus, Dimensions, Scielo, dentre outras);</li>
+<li>Bases de patentes (OCDE, US Patent Office);</li>
+<li>Bases com indicadores diversos (OCDE, IBGE);</li>
+<li>Compras Públicas (Portal da Transparência Governo Federal);</li>
+<li>Atividades legislativas (Dados da ALMG e projeto <a href="https://www.uaideputado.app.br/">UAIDEPUTADO</a>)</li>
 </ul>
 </section></section>
 <section>
-<section id="fontes-alternativas-de-informações" class="title-slide slide level1">
-<h1>Fontes alternativas de informações</h1>
-<p><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> Medidas de felicidade <span class="citation" data-cites="dodds2011">(Dodds et al. 2011)</span>, cálculos alternativos de impacto científico ;</p>
+<section id="outras-fontes-de-informações" class="title-slide slide level1">
+<h1>Outras fontes de informações</h1>
+<p><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> Medidas de felicidade a partir de dados do <a href="https://cdanfort.w3.uvm.edu/main/hedonometrics.html">twitter</a> <span class="citation" data-cites="dodds2011">(Dodds et al. 2011)</span>;</p>
 <p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg> Mobilidade de mão de obra e concentração de conhecimento em alta tecnologia; <span class="citation" data-cites="riebe2020 park2019">(Riebe, Schmid, and Reuter 2020; Park et al. 2019)</span></p>
 </section>
 <section class="slide level2">
 
 <p><svg aria-hidden="true" role="img" viewBox="0 0 352 512" style="height:1em;width:0.69em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M96.06 454.35c.01 6.29 1.87 12.45 5.36 17.69l17.09 25.69a31.99 31.99 0 0 0 26.64 14.28h61.71a31.99 31.99 0 0 0 26.64-14.28l17.09-25.69a31.989 31.989 0 0 0 5.36-17.69l.04-38.35H96.01l.05 38.35zM0 176c0 44.37 16.45 84.85 43.56 115.78 16.52 18.85 42.36 58.23 52.21 91.45.04.26.07.52.11.78h160.24c.04-.26.07-.51.11-.78 9.85-33.22 35.69-72.6 52.21-91.45C335.55 260.85 352 220.37 352 176 352 78.61 272.91-.3 175.45 0 73.44.31 0 82.97 0 176zm176-80c-44.11 0-80 35.89-80 80 0 8.84-7.16 16-16 16s-16-7.16-16-16c0-61.76 50.24-112 112-112 8.84 0 16 7.16 16 16s-7.16 16-16 16z"/></svg> Medindo índice de pobreza a partir do consumo de energia elétrica <span class="citation" data-cites="steele2017">(Steele et al. 2017)</span>;</p>
-<p><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z"/></svg> Minerar páginas da web para construir bases de dados estruturadas. Exemplo: Tratados Internacionais de Ciência e Tecnologia dos Estados Unidos.</p>
+<p><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z"/></svg> Minerar páginas da web para construir bases de dados estruturadas. Exemplo: <a href="%5Bhttps://www.state.gov/tias/%5D(https://www.state.gov/2021-tias/)">Tratados Internacionais de Ciência e Tecnologia dos Estados Unidos com outros países</a>.</p>
 </section></section>
+<section id="para-a-próxima-aula" class="title-slide slide level1">
+<h1>Para a próxima aula</h1>
+<p>Leitura e execução do códigos existentes referente ao <a href="https://ona-book.org/the-basics-of-the-r-programming-language.html">Básico da Linguagem de Programação em R</a><span class="citation" data-cites="mcnulty2022">(McNulty 2022)</span>.</p>
+</section>
+
 <section id="referências" class="title-slide slide level1 unnumbered">
 <h1 class="unnumbered">Referências</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-armengaud2017" class="csl-entry" role="doc-biblioentry">
 Armengaud, Eric, Christoph Sams, Georg von Falck, Georg List, Christian Kreiner, and Andreas Riel. 2017. <span>“Industry 4.0 as Digitalization over the Entire Product Lifecycle: Opportunities in the Automotive Domain.”</span> In, edited by Jakub Stolfa, Svatopluk Stolfa, Rory V. O’Connor, and Richard Messnarz, 748:334–51. Cham: Springer International Publishing. <a href="http://link.springer.com/10.1007/978-3-319-64218-5_28">http://link.springer.com/10.1007/978-3-319-64218-5_28</a>.
+</div>
+<div id="ref-boyack2014" class="csl-entry" role="doc-biblioentry">
+Boyack, Kevin W., and Richard Klavans. 2014. <span>“Including Cited Non-Source Items in a Large-Scale Map of Science: What Difference Does It Make?”</span> <em>Journal of Informetrics</em> 8 (3): 569–80. <a href="https://doi.org/10.1016/j.joi.2014.04.001">https://doi.org/10.1016/j.joi.2014.04.001</a>.
+</div>
+<div id="ref-boyack2014a" class="csl-entry" role="doc-biblioentry">
+Boyack, Kevin W., Michael Patek, Lyle H. Ungar, Patrick Yoon, and Richard Klavans. 2014. <span>“Classification of Individual Articles from All of Science by Research Level.”</span> <em>Journal of Informetrics</em> 8 (1): 1–12. <a href="https://doi.org/10.1016/j.joi.2013.10.005">https://doi.org/10.1016/j.joi.2013.10.005</a>.
 </div>
 <div id="ref-choo2003" class="csl-entry" role="doc-biblioentry">
 Choo, Chun W. 2003. <em>A Organização Do Conhecimento</em>. São Paulo: Editora Senac.
@@ -580,6 +603,12 @@ Dosi, Giovanni. 1982. <span>“Technological Paradigms and Technological Traject
 <div id="ref-garfield1963" class="csl-entry" role="doc-biblioentry">
 Garfield, E., and I. H. Sher. 1963. <span>“New Factors in the Evaluation of Scientific Literature Through Citation Indexing.”</span> <em>American Documentation</em> 14 (3): 195–201. <a href="https://doi.org/10.1002/asi.5090140304">https://doi.org/10.1002/asi.5090140304</a>.
 </div>
+<div id="ref-klavans2011" class="csl-entry" role="doc-biblioentry">
+Klavans, Richard, and Kevin W. Boyack. 2011. <span>“Using Global Mapping to Create More Accurate Document-Level Maps of Research Fields.”</span> <em>Journal of the American Society for Information Science and Technology</em> 62 (1): 1–18. <a href="https://doi.org/10.1002/asi.21444">https://doi.org/10.1002/asi.21444</a>.
+</div>
+<div id="ref-mcnulty2022" class="csl-entry" role="doc-biblioentry">
+McNulty, Keith. 2022. <em>Handbook of Graphs and Networks in People Analytics: With Examples in r and Python</em>. First edition. Boca Raton: CRC Press.
+</div>
 <div id="ref-park2019" class="csl-entry" role="doc-biblioentry">
 Park, Jaehyuk, Ian B. Wood, Elise Jing, Azadeh Nematzadeh, Souvik Ghosh, Michael D. Conover, and Yong-Yeol Ahn. 2019. <span>“Global Labor Flow Network Reveals the Hierarchical Organization and Dynamics of Geo-Industrial Clusters.”</span> <em>Nature Communications</em> 10 (1): 3449. <a href="https://doi.org/10.1038/s41467-019-11380-w">https://doi.org/10.1038/s41467-019-11380-w</a>.
 </div>
@@ -591,6 +620,9 @@ Riebe, Thea, Stefka Schmid, and Christian Reuter. 2020. <span>“Measuring Spill
 </div>
 <div id="ref-schumpeter2008" class="csl-entry" role="doc-biblioentry">
 Schumpeter, Joseph A. 2008. <em>Capitalis, Socialism and Democracy</em>. 3rd ed. New York: Harperperennial Modernthought.
+</div>
+<div id="ref-small2014" class="csl-entry" role="doc-biblioentry">
+Small, Henry, Kevin W. Boyack, and Richard Klavans. 2014. <span>“Identifying Emerging Topics in Science and Technology.”</span> <em>Research Policy</em> 43 (8): 1450–67. <a href="https://doi.org/10.1016/j.respol.2014.02.005">https://doi.org/10.1016/j.respol.2014.02.005</a>.
 </div>
 <div id="ref-steele2017" class="csl-entry" role="doc-biblioentry">
 Steele, Jessica E., Pål Roe Sundsøy, Carla Pezzulo, Victor A. Alegana, Tomas J. Bird, Joshua Blumenstock, Johannes Bjelland, et al. 2017. <span>“Mapping Poverty Using Mobile Phone and Satellite Data.”</span> <em>Journal of The Royal Society Interface</em> 14 (127): 20160690. <a href="https://doi.org/10.1098/rsif.2016.0690">https://doi.org/10.1098/rsif.2016.0690</a>.
