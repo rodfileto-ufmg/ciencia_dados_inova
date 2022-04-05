@@ -61,6 +61,7 @@ Professor: Rodrigo Fileto Cuerci Maciel
 
 -   Visão geral da disciplina;
 -   Evolução da análise de dados em estudos de inovação;
+-   Fontes de dados em estudos de inovação;
 
 ## Contexto
 
@@ -70,7 +71,7 @@ Em paralelo, novas ferramentas computacionais oferecem grandes possibilidades na
 
 ## Objetivos
 
--   Apresentar técnicas para coleta automatizada de informações
+-   Apresentar técnicas para coleta automatizada de informações;
 -   Apresentar um panorama de ferramentas computacionais que podem ser utilizadas para análise de indicadores e políticas de inovação.
 
 ## Ciência de Dados: Convergência de disciplinas
@@ -84,19 +85,91 @@ knitr::include_graphics("images/ciencia_dados_triade.JPG")
 
 Fonte: @armengaud2017
 
-## Tópicos
+## Tópicos da disciplina
 
-1.  Evolução da análise de dados em estudos de inovação;
+1.  Evolução da análise de dados em estudos de inovação
 
-2.  Coleta, processamento e preparação de dados;
+    a.  Conceitos básicos em economia da inovação;
 
-3.  Ciênciometria e análise de patentes;
+    b.  Evolução do uso de dados em estudos de inovação;
 
-4.  Análise de Compras Públicas;
+    c.  Fontes de dados para estudos em inovação.
 
-5.  Ferramentas de análise de big-data;
+        <p>
 
-6.  Comunicando os resultados.
+         
+
+        </p>
+
+2.  Coleta, processamento e preparação de dados
+
+    a.  Coleta automatizada de dados na web;
+
+    b.  Refinamento e preparação de dados;
+
+    c.  Análise exploratória e descritiva de dados.
+
+        <p>
+
+         
+
+        </p>
+
+3.  Ciênciometria e análise de patentes
+
+    a.  Análise de redes científicas e tecnológicas;
+
+    b.  Dados abertos em ciência;
+
+    c.  Identificação de tópicos científicos e tecnológicos: algoritmos e técnicas;
+
+    d.  Vieses de gênero na pesquisa científica;
+
+    e.  Medidas de interdisciplinaridade;
+
+    f.  Altimetria;
+
+    g.  Avaliação de impacto de financiamento.
+
+        <p>
+
+         
+
+        </p>
+
+4.  Análise de Compras Públicas
+
+    a.  Concentração regional e econômica dos fornecedores;
+
+    b.  Encomenda tecnológica;
+
+        <p>
+
+         
+
+        </p>
+
+5.  Ferramentas de análise de big-data
+
+    a.  Visão geral sobre ferramentas de big-data em R;
+
+        <p>
+
+         
+
+        </p>
+
+6.  Comunicando os resultados
+
+    a.  Princípios para elaboração de gráficos;
+
+    b.  Elaboração de relatórios e artigos científicos.
+
+        <p>
+
+         
+
+        </p>
 
 ## Configuração de software
 
@@ -112,10 +185,6 @@ Trata-se da *destruição criativa,* fruto das constantes inovações que deixam
 
 # Tópicos em Economia da Inovação
 
-<iframe src="https://app.vosviewer.com/?json=https://www.dropbox.com/s/bbiev4dw7b99q7y/VOSviewer_3047647339148513852.json?dl=1" width="960" height="700" frameBorder="0" allowFullScreen>
-
-</iframe>
-
 ## Conceito de tecnologia
 
 -   Tecnologia como sendo o "conhecimento sobre técnicas, enquanto as técnicas envolvem aplicações desse conhecimento em produtos, processos e métodos organizacionais" [@tigre2014a, p. 74].
@@ -124,14 +193,18 @@ Trata-se da *destruição criativa,* fruto das constantes inovações que deixam
 
 -   Processo evolucionário de acumulação e apropriação de conhecimento, o que gera oportunidades mas também travamento em trajetórias tecnológicas seja para indivíduos, organizações ou países [@dosi1982].
 
-# Evolução da análise de dados em inovação
-
 ## Evolução do campo
 
 -   Estabelecendo a rede de publicações científicas através de pouco mais de um milhão de citações [@desollaprice1965a; @garfield1963]. Projeto financiado pela NSF e NIH;
 -   Fundação do periódico *Scientometrics* em 1978.
--   Coleção de 2000 inovações significativas com validação de especialistas tendo em vista avaliar transferência de conhecimento entre setores industriais [@pavitt1984];
+-   Coleção de 2.000 inovações significativas com validação de especialistas tendo em vista avaliar transferência de conhecimento entre setores industriais [@pavitt1984];
 -   Análise de base de dados em larga escala [@small2014; @klavans2011; @boyack2014; @boyack2014a].
+
+------------------------------------------------------------------------
+
+-   Análise de patentes avaliando o impacto do financiamento público dos Estados Unidos.
+
+Narin et. al. [-@narin1997] avaliaram as referências (não-patentes) de **397.660** Patentes no período registradas no período de 1987-1988. Corredoira et. al. [@corredoira2018] analisaram **4.311** patentes com financiamento federal e 2.000 amostras *bootstrap* com igual número de patentes sem financiamento federal. Ambos os trabalham chegaram a resultados similares ressaltando a importância das agências governamentais na pesquisa e desenvolvimento de tecnologias.
 
 ## Fontes de dados para estudos em inovação
 
@@ -139,7 +212,18 @@ Trata-se da *destruição criativa,* fruto das constantes inovações que deixam
 -   Bases de patentes (OCDE, US Patent Office);
 -   Bases com indicadores diversos (OCDE, IBGE);
 -   Compras Públicas (Portal da Transparência Governo Federal);
--   Atividades legislativas (Dados da ALMG e projeto [UAIDEPUTADO](<https://www.uaideputado.app.br/>))
+-   Atividades legislativas (Dados da ALMG e projeto [UAIDEPUTADO](https://www.uaideputado.app.br/))
+
+## Exemplo de Análise - Scielo
+
+```{r echo=FALSE, fig.align='center'}
+
+knitr::include_graphics("./images/cluster_map.png")
+
+
+```
+
+Áreas científicas a partir de dados da Scielo. O mapa interativo pode ser acessado em <https://app.vosviewer.com/?json=https://www.dropbox.com/s/bbiev4dw7b99q7y/VOSviewer_3047647339148513852.json?dl=1>
 
 # Outras fontes de informações
 
@@ -151,10 +235,14 @@ Trata-se da *destruição criativa,* fruto das constantes inovações que deixam
 
 `r fa("lightbulb", fill = "steelblue")` Medindo índice de pobreza a partir do consumo de energia elétrica [@steele2017];
 
-`r fa("tools", fill = "steelblue")` Minerar páginas da web para construir bases de dados estruturadas. Exemplo: [Tratados Internacionais de Ciência e Tecnologia dos Estados Unidos com outros países]([https://www.state.gov/tias/](https://www.state.gov/2021-tias/)).
+`r fa("tools", fill = "steelblue")` Minerar páginas da web para construir bases de dados estruturadas. Exemplo: [Tratados Internacionais de Ciência e Tecnologia dos Estados Unidos com outros países](%5Bhttps://www.state.gov/tias/%5D(https://www.state.gov/2021-tias/)).
 
 # Para a próxima aula
 
-Leitura e execução do códigos existentes referente ao [Básico da Linguagem de Programação em R](<https://ona-book.org/the-basics-of-the-r-programming-language.html>)[@mcnulty2022].
+Leitura e execução dos códigos referente ao [Básico da Linguagem de Programação em R](https://ona-book.org/the-basics-of-the-r-programming-language.html)[@mcnulty2022].
+
+# Material de aula
+
+Todo o material de aula bem como *scripts* utilizados encontram-se em repositório aberto no Github.
 
 # Referências

@@ -489,7 +489,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section id="objetivos" class="slide level2">
 <h2>Objetivos</h2>
 <ul>
-<li>Apresentar técnicas para coleta automatizada de informações</li>
+<li>Apresentar técnicas para coleta automatizada de informações;</li>
 <li>Apresentar um panorama de ferramentas computacionais que podem ser utilizadas para análise de indicadores e políticas de inovação.</li>
 </ul>
 </section>
@@ -498,15 +498,63 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <p><img src="images/ciencia_dados_triade.JPG" width="50%" style="display: block; margin: auto;" /></p>
 <p>Fonte: <span class="citation" data-cites="armengaud2017">Armengaud et al. (2017)</span></p>
 </section>
-<section id="tópicos" class="slide level2">
-<h2>Tópicos</h2>
+<section id="tópicos-da-disciplina" class="slide level2">
+<h2>Tópicos da disciplina</h2>
 <ol type="1">
-<li><p>Evolução da análise de dados em estudos de inovação;</p></li>
-<li><p>Coleta, processamento e preparação de dados;</p></li>
-<li><p>Ciênciometria e análise de patentes;</p></li>
-<li><p>Análise de Compras Públicas;</p></li>
-<li><p>Ferramentas de análise de big-data;</p></li>
-<li><p>Comunicando os resultados.</p></li>
+<li><p>Evolução da análise de dados em estudos de inovação</p>
+<ol type="a">
+<li><p>Conceitos básicos em economia da inovação;</p></li>
+<li><p>Evolução do uso de dados em estudos de inovação;</p></li>
+<li><p>Fontes de dados para estudos em inovação.</p>
+<p>
+<p> </p>
+</p></li>
+</ol></li>
+<li><p>Coleta, processamento e preparação de dados</p>
+<ol type="a">
+<li><p>Coleta automatizada de dados na web;</p></li>
+<li><p>Refinamento e preparação de dados;</p></li>
+<li><p>Análise exploratória e descritiva de dados.</p>
+<p>
+<p> </p>
+</p></li>
+</ol></li>
+<li><p>Ciênciometria e análise de patentes</p>
+<ol type="a">
+<li><p>Análise de redes científicas e tecnológicas;</p></li>
+<li><p>Dados abertos em ciência;</p></li>
+<li><p>Identificação de tópicos científicos e tecnológicos: algoritmos e técnicas;</p></li>
+<li><p>Vieses de gênero na pesquisa científica;</p></li>
+<li><p>Medidas de interdisciplinaridade;</p></li>
+<li><p>Altimetria;</p></li>
+<li><p>Avaliação de impacto de financiamento.</p>
+<p>
+<p> </p>
+</p></li>
+</ol></li>
+<li><p>Análise de Compras Públicas</p>
+<ol type="a">
+<li><p>Concentração regional e econômica dos fornecedores;</p></li>
+<li><p>Encomenda tecnológica;</p>
+<p>
+<p> </p>
+</p></li>
+</ol></li>
+<li><p>Ferramentas de análise de big-data</p>
+<ol type="a">
+<li><p>Visão geral sobre ferramentas de big-data em R;</p>
+<p>
+<p> </p>
+</p></li>
+</ol></li>
+<li><p>Comunicando os resultados</p>
+<ol type="a">
+<li><p>Princípios para elaboração de gráficos;</p></li>
+<li><p>Elaboração de relatórios e artigos científicos.</p>
+<p>
+<p> </p>
+</p></li>
+</ol></li>
 </ol>
 </section>
 <section id="configuração-de-software" class="slide level2">
@@ -525,8 +573,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section>
 <section id="tópicos-em-economia-da-inovação" class="title-slide slide level1">
 <h1>Tópicos em Economia da Inovação</h1>
-<iframe src="https://app.vosviewer.com/?json=https://www.dropbox.com/s/bbiev4dw7b99q7y/VOSviewer_3047647339148513852.json?dl=1" width="960" height="700" frameBorder="0" allowFullScreen>
-</iframe>
+
 </section>
 <section id="conceito-de-tecnologia" class="slide level2">
 <h2>Conceito de tecnologia</h2>
@@ -535,20 +582,22 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li><p>Abordagem focada no conhecimento tácito e explícito. Tradução desse conhecimento em novos processos e produtos<span class="citation" data-cites="choo2003 takeuchi2008">(Choo 2003; Takeuchi and Nonaka 2008)</span>.</p></li>
 <li><p>Processo evolucionário de acumulação e apropriação de conhecimento, o que gera oportunidades mas também travamento em trajetórias tecnológicas seja para indivíduos, organizações ou países <span class="citation" data-cites="dosi1982">(Dosi 1982)</span>.</p></li>
 </ul>
-</section></section>
-<section>
-<section id="evolução-da-análise-de-dados-em-inovação" class="title-slide slide level1">
-<h1>Evolução da análise de dados em inovação</h1>
-
 </section>
 <section id="evolução-do-campo" class="slide level2">
 <h2>Evolução do campo</h2>
 <ul>
 <li>Estabelecendo a rede de publicações científicas através de pouco mais de um milhão de citações <span class="citation" data-cites="desollaprice1965a garfield1963">(De Solla Price 1965; Garfield and Sher 1963)</span>. Projeto financiado pela NSF e NIH;</li>
 <li>Fundação do periódico <em>Scientometrics</em> em 1978.</li>
-<li>Coleção de 2000 inovações significativas com validação de especialistas tendo em vista avaliar transferência de conhecimento entre setores industriais <span class="citation" data-cites="pavitt1984">(Pavitt 1984)</span>;</li>
+<li>Coleção de 2.000 inovações significativas com validação de especialistas tendo em vista avaliar transferência de conhecimento entre setores industriais <span class="citation" data-cites="pavitt1984">(Pavitt 1984)</span>;</li>
 <li>Análise de base de dados em larga escala <span class="citation" data-cites="small2014 klavans2011 boyack2014 boyack2014a">(Small, Boyack, and Klavans 2014; Klavans and Boyack 2011; Boyack and Klavans 2014; Boyack et al. 2014)</span>.</li>
 </ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Análise de patentes avaliando o impacto do financiamento público dos Estados Unidos.</li>
+</ul>
+<p>Narin et. al. <span class="citation" data-cites="narin1997">(1997)</span> avaliaram as referências (não-patentes) de <strong>397.660</strong> Patentes no período registradas no período de 1987-1988. Corredoira et. al. <span class="citation" data-cites="corredoira2018">(Corredoira, Goldfarb, and Shi 2018)</span> analisaram <strong>4.311</strong> patentes com financiamento federal e 2.000 amostras <em>bootstrap</em> com igual número de patentes sem financiamento federal. Ambos os trabalham chegaram a resultados similares ressaltando a importância das agências governamentais na pesquisa e desenvolvimento de tecnologias.</p>
 </section>
 <section id="fontes-de-dados-para-estudos-em-inovação" class="slide level2">
 <h2>Fontes de dados para estudos em inovação</h2>
@@ -559,6 +608,11 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Compras Públicas (Portal da Transparência Governo Federal);</li>
 <li>Atividades legislativas (Dados da ALMG e projeto <a href="https://www.uaideputado.app.br/">UAIDEPUTADO</a>)</li>
 </ul>
+</section>
+<section id="exemplo-de-análise---scielo" class="slide level2">
+<h2>Exemplo de Análise - Scielo</h2>
+<p><img src="images/cluster_map.png" width="4140" style="display: block; margin: auto;" /></p>
+<p>Áreas científicas a partir de dados da Scielo. O mapa interativo pode ser acessado em <a href="https://app.vosviewer.com/?json=https://www.dropbox.com/s/bbiev4dw7b99q7y/VOSviewer_3047647339148513852.json?dl=1" class="uri">https://app.vosviewer.com/?json=https://www.dropbox.com/s/bbiev4dw7b99q7y/VOSviewer_3047647339148513852.json?dl=1</a></p>
 </section></section>
 <section>
 <section id="outras-fontes-de-informações" class="title-slide slide level1">
@@ -573,7 +627,12 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </section></section>
 <section id="para-a-próxima-aula" class="title-slide slide level1">
 <h1>Para a próxima aula</h1>
-<p>Leitura e execução do códigos existentes referente ao <a href="https://ona-book.org/the-basics-of-the-r-programming-language.html">Básico da Linguagem de Programação em R</a><span class="citation" data-cites="mcnulty2022">(McNulty 2022)</span>.</p>
+<p>Leitura e execução dos códigos referente ao <a href="https://ona-book.org/the-basics-of-the-r-programming-language.html">Básico da Linguagem de Programação em R</a><span class="citation" data-cites="mcnulty2022">(McNulty 2022)</span>.</p>
+</section>
+
+<section id="material-de-aula" class="title-slide slide level1">
+<h1>Material de aula</h1>
+<p>Todo o material de aula bem como <em>scripts</em> utilizados encontram-se em repositório aberto no Github.</p>
 </section>
 
 <section id="referências" class="title-slide slide level1 unnumbered">
@@ -590,6 +649,9 @@ Boyack, Kevin W., Michael Patek, Lyle H. Ungar, Patrick Yoon, and Richard Klavan
 </div>
 <div id="ref-choo2003" class="csl-entry" role="doc-biblioentry">
 Choo, Chun W. 2003. <em>A Organização Do Conhecimento</em>. São Paulo: Editora Senac.
+</div>
+<div id="ref-corredoira2018" class="csl-entry" role="doc-biblioentry">
+Corredoira, Rafael A., Brent D. Goldfarb, and Yuan Shi. 2018. <span>“Federal Funding and the Rate and Direction of Inventive Activity.”</span> <em>Research Policy</em> 47 (9): 1777–1800. <a href="https://doi.org/10.1016/j.respol.2018.06.009">https://doi.org/10.1016/j.respol.2018.06.009</a>.
 </div>
 <div id="ref-desollaprice1965a" class="csl-entry" role="doc-biblioentry">
 De Solla Price, Derek J. 1965. <span>“Networks of Scientific Papers.”</span> <em>Science</em> 149 (3683): 510–10. <a href="https://doi.org/10.1126/science.149.3683.510">https://doi.org/10.1126/science.149.3683.510</a>.
@@ -608,6 +670,9 @@ Klavans, Richard, and Kevin W. Boyack. 2011. <span>“Using Global Mapping to Cr
 </div>
 <div id="ref-mcnulty2022" class="csl-entry" role="doc-biblioentry">
 McNulty, Keith. 2022. <em>Handbook of Graphs and Networks in People Analytics: With Examples in r and Python</em>. First edition. Boca Raton: CRC Press.
+</div>
+<div id="ref-narin1997" class="csl-entry" role="doc-biblioentry">
+Narin, Francis, Kimberly S. Hamilton, and Dominic Olivastro. 1997. <span>“The Increasing Linkage Between U.S. Technology and Public Science.”</span> <em>Research Policy</em> 26 (3): 317–30. <a href="https://doi.org/10.1016/S0048-7333(97)00013-9">https://doi.org/10.1016/S0048-7333(97)00013-9</a>.
 </div>
 <div id="ref-park2019" class="csl-entry" role="doc-biblioentry">
 Park, Jaehyuk, Ian B. Wood, Elise Jing, Azadeh Nematzadeh, Souvik Ghosh, Michael D. Conover, and Yong-Yeol Ahn. 2019. <span>“Global Labor Flow Network Reveals the Hierarchical Organization and Dynamics of Geo-Industrial Clusters.”</span> <em>Nature Communications</em> 10 (1): 3449. <a href="https://doi.org/10.1038/s41467-019-11380-w">https://doi.org/10.1038/s41467-019-11380-w</a>.
