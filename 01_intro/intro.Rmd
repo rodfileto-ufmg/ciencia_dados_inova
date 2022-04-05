@@ -185,6 +185,16 @@ Trata-se da *destruição criativa,* fruto das constantes inovações que deixam
 
 # Tópicos em Economia da Inovação
 
+## Economia da Ciência e tecnologia
+
+```{r echo=FALSE}
+
+knitr::include_graphics("./images/mapa_termo_livro.png")
+
+```
+
+Mapa de termos extraídos do livro Economia da Ciência, tecnologia e Inovação [@rapini2021]. A versão interativa pode ser consultada em \<[https://app.vosviewer.com/?json=[https://www.dropbox.com/s/iyviaw81wxs7ve2/VOSviewer_10994639254053557399.json?dl=](https://www.dropbox.com/s/iyviaw81wxs7ve2/VOSviewer_10994639254053557399.json?dl=0)](https://app.vosviewer.com/?json=https://www.dropbox.com/s/mvblfhztny1hlvh/VOSviewer_9937830394111503826.json?dl=1)1>
+
 ## Conceito de tecnologia
 
 -   Tecnologia como sendo o "conhecimento sobre técnicas, enquanto as técnicas envolvem aplicações desse conhecimento em produtos, processos e métodos organizacionais" [@tigre2014a, p. 74].
