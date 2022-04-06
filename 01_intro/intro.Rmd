@@ -21,41 +21,23 @@ library(fontawesome)
 
 ```
 
-<center>
+<center>UNIVERSIDADE FEDERAL DE MINAS GERAIS</center>
 
-UNIVERSIDADE FEDERAL DE MINAS GERAIS
-
-</center>
-
-<center>
-
-<medium> Centro de Desenvolvimento e Planejamento Regional </medium>
-
-</center>
+<center><medium>Centro de Desenvolvimento e Planejamento Regional</medium></center>
 
 <br>
 
-<center>
-
-Disciplina: CIÊNCIA DE DADOS PARA INOVAÇÃO
-
-</center>
+<center> CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO </center>
 
 <br>
 
 <br>
 
-<center>
+<center> Semestre 2022/1 </center>
 
-Semestre 2022/1
+<br>
 
-</center>
-
-<center>
-
-Professor: Rodrigo Fileto Cuerci Maciel
-
-</center>
+<center> Professor: Rodrigo Fileto Cuerci Maciel </center>
 
 # Aula Introdutória
 
@@ -193,7 +175,7 @@ knitr::include_graphics("./images/mapa_termo_livro.png")
 
 ```
 
-Mapa de termos extraídos do livro Economia da Ciência, tecnologia e Inovação [@rapini2021]. A versão interativa pode ser consultada em \<[https://app.vosviewer.com/?json=[https://www.dropbox.com/s/iyviaw81wxs7ve2/VOSviewer_10994639254053557399.json?dl=](https://www.dropbox.com/s/iyviaw81wxs7ve2/VOSviewer_10994639254053557399.json?dl=0)](https://app.vosviewer.com/?json=https://www.dropbox.com/s/mvblfhztny1hlvh/VOSviewer_9937830394111503826.json?dl=1)1>
+Mapa de termos extraídos do livro Economia da Ciência, tecnologia e Inovação [@rapini2021].
 
 ## Conceito de tecnologia
 
