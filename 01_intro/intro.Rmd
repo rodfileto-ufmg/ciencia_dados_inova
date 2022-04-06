@@ -196,7 +196,7 @@ Mapa de termos extraídos do livro Economia da Ciência, tecnologia e Inovação
 
 -   Análise de patentes avaliando o impacto do financiamento público dos Estados Unidos.
 
-Narin et. al. [-@narin1997] avaliaram as referências (não-patentes) de **397.660** Patentes registradas no período de 1987-1988. Corredoira et. al. [@corredoira2018] analisaram **4.311** patentes com financiamento federal e 2.000 amostras *bootstrap* com igual número de patentes sem financiamento federal. Ambos os trabalham chegaram a resultados similares ressaltando a importância das agências governamentais na pesquisa e desenvolvimento de tecnologias.
+Narin et. al. [-@narin1997] avaliaram as referências (não-patentes) de **397.660** Patentes registradas no período de 1987-1988. Corredoira et. al. [-@corredoira2018] analisaram **4.311** patentes com financiamento federal e 2.000 amostras *bootstrap* com igual número de patentes sem financiamento federal. Ambos os trabalham chegaram a resultados similares ressaltando a importância das agências governamentais na pesquisa e desenvolvimento de tecnologias.
 
 ## Fontes de dados para estudos em inovação
 
