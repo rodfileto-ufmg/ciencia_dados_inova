@@ -4,9 +4,9 @@ author: ""
 # date: March 22, 2005
 output: 
   revealjs::revealjs_presentation:
-    self_contained: false
+    self_contained: true
     css: styles.css
-    reveal_plugins: ["zoom", "menu", "notes"]
+    # reveal_plugins: ["zoom", "menu", "notes"]
     reveal_options:
       width: 960
       height: 700
@@ -196,7 +196,7 @@ Mapa de termos extraídos do livro Economia da Ciência, tecnologia e Inovação
 
 -   Análise de patentes avaliando o impacto do financiamento público dos Estados Unidos.
 
-Narin et. al. [-@narin1997] avaliaram as referências (não-patentes) de **397.660** Patentes registradas no período de 1987-1988. Corredoira et. al. [@corredoira2018] analisaram **4.311** patentes com financiamento federal e 2.000 amostras *bootstrap* com igual número de patentes sem financiamento federal. Ambos os trabalham chegaram a resultados similares ressaltando a importância das agências governamentais na pesquisa e desenvolvimento de tecnologias.
+Narin et. al. [-@narin1997] avaliaram as referências (não-patentes) de **397.660** Patentes registradas no período de 1987-1988. Corredoira et. al. [-@corredoira2018] analisaram **4.311** patentes com financiamento federal e 2.000 amostras *bootstrap* com igual número de patentes sem financiamento federal. Ambos os trabalham chegaram a resultados similares ressaltando a importância das agências governamentais na pesquisa e desenvolvimento de tecnologias.
 
 ## Fontes de dados para estudos em inovação
 
@@ -235,6 +235,6 @@ Leitura e execução dos códigos referente ao [Básico da Linguagem de Programa
 
 # Material de aula
 
-Todo o material de aula bem como *scripts* utilizados encontram-se em repositório aberto no Github.
+Todo o material de aula bem como *scripts* utilizados encontram-se em [repositório aberto no Github](https://github.com/rodfileto-ufmg/ciencia_dados_inova).
 
 # Referências
