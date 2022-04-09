@@ -50,7 +50,7 @@ library(fontawesome)
     
 # Material de aula
 
-O Material desta aula bem como *scripts* utilizados encontram-se em [repositório aberto no Github](https://github.com/rodfileto-ufmg/ciencia_dados_inova).
+O Material desta aula bem como *scripts* utilizados encontram-se em [repositório aberto no Github](https://github.com/rodfileto-ufmg/ciencia_dados_inova/tree/main/02_data_colecao).
     
     
 
