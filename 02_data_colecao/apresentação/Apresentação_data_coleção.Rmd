@@ -1,0 +1,75 @@
+---
+title: ""
+author: ""
+# date: March 22, 2005
+output: 
+  revealjs::revealjs_presentation:
+    self_contained: true
+    css: styles.css
+    # reveal_plugins: ["zoom", "menu", "notes"]
+    reveal_options:
+      width: 960
+      height: 700
+      slideNumber: true
+      controls: false
+---
+
+```{r include=FALSE}
+
+library(fontawesome)
+
+```
+
+<center>UNIVERSIDADE FEDERAL DE MINAS GERAIS</center>
+
+<center><medium>Centro de Desenvolvimento e Planejamento Regional</medium></center>
+
+<br>
+
+<center> CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO </center>
+
+<center>Coleta e processamento de dados</center>
+
+<br>
+
+<br>
+
+<center> Semestre 2022/1 </center>
+
+<br>
+
+<center> Professor: Rodrigo Fileto Cuerci Maciel </center>
+
+# Objetivos desta aula
+
+
+-   Trazer um panorama geral de formatos de arquivos dados;
+-   Apresentar técnicas de extração automática de dados;
+    - Dados de API (**Application Programming Interface**);
+    - Mineração de dados na internet (**web scraping**);
+    
+# Material de aula
+
+O Material desta aula bem como *scripts* utilizados encontram-se em [repositório aberto no Github](https://github.com/rodfileto-ufmg/ciencia_dados_inova).
+    
+    
+
+## Formato de arquivos de dados
+
+-   CSV/TSV;
+-   XML/HTML;
+-   JSON;
+-   Parquet;
+
+## Sugestão de fluxo de trabalho para coleta de dados
+
+<center> Necessito de um conjunto de dados: onde procurar? </center>
+
+## Lendo e escrevendo dados no R
+
+## Fontes de pesquisa para coleta e processamento de dados
+
+-   Github: quando já se conhece um pacote específico do R
+-   Stackoverflow: Para questões gerais que podem ser feitas diretamente no Google
+
+
