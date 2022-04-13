@@ -42,7 +42,7 @@ dados_wide <- todos_estados %>%
   pivot_wider(names_from = c("Variável"), values_from = c("Valor"))
 
 
-cor.test(temp_2$`Produto Interno Bruto a preços correntes`, temp_2$`Valor adicionado bruto a preços correntes da indústria`)
+cor.test(dados_wide$`Produto Interno Bruto a preços correntes`, dados_wide$`Valor adicionado bruto a preços correntes da indústria`)
 
 modelo_linear <- lm(`Produto Interno Bruto a preços correntes` ~ `Valor adicionado bruto a preços correntes da indústria`, data = dados_wide)
 
@@ -50,4 +50,4 @@ summary(modelo_linear)
 
 data_coleta <- format(as.Date(Sys.time(),format="%Y-%m-%d"), format = "%d/%m/%Y")
 
-write_lines(data_coleta, "data_coleta.txt")
+write_lines(data_coleta, "./02_data_colecao/dados/data_coleta.txt")
