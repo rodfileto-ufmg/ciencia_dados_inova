@@ -1,6 +1,9 @@
 library(RSelenium)
 library(purrr)
 
+
+
+
 myswitch <- function (remDr, windowId) 
 {
   qpath <- sprintf("%s/session/%s/window", remDr$serverURL, 
@@ -44,7 +47,7 @@ myswitch(remDr, windows_handles[[2]])
 # 2021
 # 964
 
-results <- 964
+results <- 1015
 
 start_register <- seq(from = 1, to = results, by = 500)
 
@@ -53,8 +56,6 @@ end_register <- seq(from = 500, to = results, by = 500)
 end_register <- c(end_register, results)
 
 n_files <- length(start_register)
-
-star
 
 
 download_wos <- function(start_register, end_register) {
@@ -138,7 +139,7 @@ Sys.sleep(30)
 pmap(list(start_register, end_register), download_wos)
 
 
-
+remDr$close()
 
 
 
@@ -187,5 +188,5 @@ pmap(list(start_register, end_register), download_wos)
 # 
 # 
 # 
-remDr$close()
+
 # 

@@ -12,7 +12,7 @@ dir.create("./02_data_colecao/dados/ALMG/")
 
 dir.create(paste0("./02_data_colecao/dados/ALMG/", tipo))
 
-# ano <- 1980
+ano <- 1980
 
 # Fazer para cada ano
 baixar_base <- function(ano) {
@@ -32,15 +32,15 @@ baixar_base <- function(ano) {
   nr_paginas <- ceiling(nr_resultados/100)
   
 
-  # extrair dados para cada página 
+  #### extrair dados para cada página 
 
   if (length(nr_paginas) != 0) {
     
     extrair_paginas <- function(pagina) {
       
-      # pagina <- 1
+      pagina <- 1
       
-      url_pagina <- paste0("http://dadosabertos.almg.gov.br/ws/proposicoes/pesquisa/direcionada?ano=", ano, "&sitTram=2&tipo=", tipo, "&formato=json&tp=100&p=", pagina) # endere?o de lista de projetos de lei
+      url_pagina <- paste0("http://dadosabertos.almg.gov.br/ws/proposicoes/pesquisa/direcionada?ano=", ano, "&sitTram=2&tipo=", tipo, "&formato=json&tp=100&p=", pagina) # endereçoo de lista de projetos de lei
       
       dados_json <- GET(url_pagina)
       
@@ -67,7 +67,7 @@ baixar_base <- function(ano) {
       
     }
     
-    tabela <- map(1:nr_paginas, extrair_paginas) %>%
+    tabela <- map_dfr(1:nr_paginas, extrair_paginas) %>%
       bind_rows()
     
     write_csv(tabela, paste0("./02_data_colecao/dados/ALMG/", tipo, "/", ano, ".csv"))

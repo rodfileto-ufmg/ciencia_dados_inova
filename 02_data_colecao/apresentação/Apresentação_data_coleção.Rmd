@@ -28,9 +28,9 @@ library(fontawesome)
 
 <center> CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO </center>
 
-<center>Coleta e processamento de dados</center>
-
 <br>
+
+<center>Módulo: **Coleta e preparação de dados**</center>
 
 <br>
 
@@ -40,36 +40,74 @@ library(fontawesome)
 
 <center> Professor: Rodrigo Fileto Cuerci Maciel </center>
 
-# Objetivos desta aula
+# Objetivo desta aula
 
-
--   Trazer um panorama geral de formatos de arquivos dados;
 -   Apresentar técnicas de extração automática de dados;
     - Dados de API (**Application Programming Interface**);
     - Mineração de dados na internet (**web scraping**);
     
 # Material de aula
 
-O Material desta aula bem como *scripts* utilizados encontram-se em [repositório aberto no Github](https://github.com/rodfileto-ufmg/ciencia_dados_inova/tree/main/02_data_colecao).
-    
-    
+O Material desta aula bem como *scripts* utilizados encontram-se em [repositório aberto no Github](https://github.com/rodfileto-ufmg/ciencia_dados_inova/tree/main/02_data_colecao){target="_blank"}.
 
-# Formato de arquivos de dados
+# Funções básicas para preparação de dados
+
+Exemplos retirados [deste repositório do Github](https://hbctraining.github.io/Intro-to-R/lessons/tidyverse_data_wrangling.html){target="_blank"}.
+
+-   `select()` seleciona colunas e retorna uma tabela.
+-   `arrange()` muda o ordenamento de linhas;
+-   `filter()` escolhe células baseadas nos seus valores;
+-   `mutate()` adiciona novas variáveis (ou altera alguma existente) que são funções das variáveis existentes;
+-   `rename` altera o nome de uma ou mais colunas;
+-   `summarise()` reduz múltiplos valores para um único a partir de uma função. Normalmente utilizado com `group_by()`
+-   `pull()` extrai uma coluna como vetor.
+-   `_join()` grupo de funções que mesclam duas tabelas. Inclui `inner_join()`, `left_join()`, `right_join()` e `full_join()`.
+- `pivot_wider` e `pivot_longer` modificam a tabela para o formato "largo" e "longo" respectivamente.
+
+# Funções _join
+
+
+```{r echo=FALSE, fig.align='center', out.width="60%"}
+
+knitr::include_graphics("./imagens/inner-join.gif")
+
+
+```
+
+# pivot_wider e pivot_longer
+
+
+```{r echo=FALSE, fig.align='center', out.width="40%"}
+
+knitr::include_graphics("./imagens/tidyr-pivoting.gif")
+
+
+```
+
+
+<center>Mais exemplos animados [neste repositório do Github](https://github.com/gadenbuie/tidyexplain){target="_blank"}</center>.
+
+
+# Alguns formato de arquivos de dados
 
 -   CSV/TSV;
 -   XML/HTML;
 -   JSON;
 -   Parquet;
 
-# Sugestão de fluxo de trabalho para coleta de dados
+# Sugestão de fluxo de trabalho
 
-<center> Necessito de um conjunto de dados: onde procurar? </center>
+<center> Necessito de um conjunto de dados: Como acessá-los? </center>
 
-# Modularização de projetos
+<br>
 
-# Fontes de pesquisa para programação
+1. Download em Massa (*Bulk Download*) ou a partir de seleção específica;
+1. Pacote no R para acessar API específico (Ex: OCDE, Banco Mundial, CrossRef);
+1. Caso não haja pacote específico, acesso customizado ao API através do pacote [httr](https://cran.r-project.org/web/packages/httr/vignettes/quickstart.html);
 
--   Github: Para entender o código ou procurar questões sobre pacotes específicos. Exemplos: pacote ["CGE"](https://cran.r-project.org/web/packages/CGE/CGE.pdf) para Equilíbrio Geral Computável e pacote ["economiccomplexity"](https://cran.r-project.org/web/packages/economiccomplexity/index.html); 
+# Fontes de pesquisa para códigos
+
+-   Github: Para entender o código ou procurar questões sobre pacotes específicos. Exemplos: pacote ["CGE"](https://cran.r-project.org/web/packages/CGE/CGE.pdf){target="_blank"} para Equilíbrio Geral Computável e pacote ["economiccomplexity"](https://cran.r-project.org/web/packages/economiccomplexity/index.html){target="_blank"}; 
 -   Stackoverflow: questões gerais que podem ser feitas diretamente no Google;
 
 ```{r echo=FALSE, fig.align='center', out.width="40%"}
@@ -79,12 +117,30 @@ knitr::include_graphics("./imagens/stack_meme.jpg")
 
 ```
 
+# Modularização de projetos
+
+1. Criar um projeto no Rstudio;
+1. Criar pastas;
+1. Modularizar scripts de acordo com o fluxo de trabalho;
+1. O resultado de um script deve ser salvo em arquivo específico para ser utilizado nas demais etapas do projeto.
+
+
+
+```{r echo=FALSE, fig.align='center', fig.cap="Exemplo de projeto. Cada fase teria um script específico"}
+
+knitr::include_graphics("./imagens/Exemplo_projeto.jpeg")
+
+```
+
 # Coletando dados através de pacotes no R
 
 Alguns pacotes no R servem como interface para extrair dados de API's específicos. Trataremos aqui das seguintes bases:
 
 -   Organização para a Coperação e Desenvolvimento Econômico (OCDE) - [*OECD DATA*](https://data.oecd.org/){target="_blank"};
 -   Indicadores do Banco Mundial - [*WDI*](https://datatopics.worldbank.org/world-development-indicators/){target="_blank"};
+
+
+
 
 # Coleta de dados diretamente em API
 
@@ -110,7 +166,11 @@ Definir o tipo de proposição a ser extraída conforme nomenclatura disponível
 ```{r echo = T, results='hide', warning=FALSE, message=FALSE}
 
 # Definir o tipo de proposição a ser extraída conforme 
+
 # nomenclatura disponível em http://dadosabertos.almg.gov.br/ws/proposicoes/ajuda#tiposProposicao
+
+# A estrutura de arquivos a seguir é de acordo com o projeto. 
+#Altere de acordo com sua preferência e estrutura própria de arquivos no seu computador
 
 tipo <- "PL"
 
@@ -130,7 +190,7 @@ baixar_base <- function(ano) {
   
   # 1a parte:
   # Identificar o número de registros existentes para determinado ano
-  # Calcular o número de interações necessárias
+  # Calcular o número de iterações necessárias
   
   extrair_paginas <- function(pagina) {
     
@@ -139,7 +199,7 @@ baixar_base <- function(ano) {
   }
   
   # 3a parte:
-  # Unificar os resultados das interações
+  # Executar para cada página a função extrair páginas
   
 }
 
@@ -219,7 +279,7 @@ extrair_paginas <- function(pagina) {
 }
 ```
 
-## Executar função de forma interativa
+## Executar função de forma iterativa
 
 ```{r eval=FALSE}
 
@@ -227,7 +287,7 @@ baixar_base <- function(ano) {
   
   # 1a parte:
   # Identificar o número de registros existentes para determinado ano
-  # Calcular o número de interações necessárias
+  # Calcular o número de iterações necessárias
   
   extrair_paginas <- function(pagina) {
     
@@ -236,10 +296,9 @@ baixar_base <- function(ano) {
   }
   
   # 3a parte:
-  # Unificar os resultados das interações
+  # Unificar os resultados das iterações
   
-  tabela <- map(1:nr_paginas, extrair_paginas) %>% # Coleta dados de cada página
-    bind_rows() # Unifica a lista de tabelas em um dataframe
+  tabela <- map_dfr(1:nr_paginas, extrair_paginas) %>% # Coleta dados de cada página
   
   # Escreve os resultados para a pasta do tipo de proposição
   write_csv(tabela, paste0("./02_data_colecao/dados/ALMG/", tipo, "/", ano, ".csv"))
@@ -253,7 +312,42 @@ baixar_base <- function(ano) {
 
 # Mineração de dados de websites
 
+## Acessando elementos de Websites
 
+- Tutorial de expressões [*XPath*](https://www.w3schools.com/xml/xpath_intro.asp){target="_blank"};
+- Inspecionando elementos através do navegador de internet;
+
+- Minha preferência: usando seletores de elementos (Ex: [SelectorsHub](https://selectorshub.com/)).
+
+## XPath
+
+```{html}
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bookstore>
+  <book>
+    <title lang="en">Harry Potter</title>
+    <author>J K. Rowling</author>
+    <year>2005</year>
+    <price>29.99</price>
+  </book>
+</bookstore> 
+```
+
+Exemplos de nós no documento XML anterior
+
+```{html}
+
+<bookstore> (Elemento raiz)
+
+<author>J K. Rowling</author> (elemento)
+
+lang="en" (atributo) 
+
+
+```
 
 
 
