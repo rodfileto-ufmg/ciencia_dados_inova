@@ -32,4 +32,27 @@ div .csl-entry {
   margin-bottom: 30px;
   
 }
+
+#left-3 {
+  left:-8.33%;
+  text-align: left;
+  float: left;
+  width:33.33%;
+  z-index:-10;
+}
+
+
+#center-3 {
+  text-align: center;
+  display: inline-block;
+  width:33.33%;
+  z-index:-10;
+}
+
+#right-3 {
+  float: right;
+  text-align: right;
+  width:33.33%;
+  z-index:-10;
+}
   
