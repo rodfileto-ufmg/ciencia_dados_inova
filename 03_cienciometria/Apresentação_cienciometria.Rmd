@@ -69,17 +69,27 @@ Professor: Rodrigo Fileto Cuerci Maciel
 
 </center>
 
+# Objetivos desta aula
+
+-   Apresentar alguns conceitos básicos de rede;
+
+-   Discorrer sobre tópicos em cienciometria e análise de patentes.
+
+# Material de aula
+
+O Material desta aula bem como \*scripts\* utilizados encontram-se em [repositório aberto no Github]([https://github.com/rodfileto-ufmg/ciencia_dados_inova/tree/main/02_data_colecao){target="\_blank"}.](https://github.com/rodfileto-ufmg/ciencia_dados_inova/tree/main/02_data_colecao){target="_blank"}.)
+
 # Tópicos
 
 1.  Dados abertos em ciência;
 
 2.  Identificação de tópicos científicos e tecnológicos: algoritmos e técnicas;
 
-3.  Vieses de gênero na pesquisa científica;
+3.  Emergência tecnológica;
 
-4.  Medidas de interdisciplinaridade;
+4.  Vieses de gênero na pesquisa científica;
 
-5.  Emergência tecnológica
+5.  Medidas de interdisciplinaridade;
 
 6.  Altimetria;
 
@@ -338,8 +348,8 @@ Para uma visão geral de algoritmos de detecção de comunidades verificar o pac
 
 @sjögårde2020 estabelece metodologia, baseada na concentração/distribuição de periódicos por comunidades, como parâmetro para definir resolução de modo a identificar especialidades científicas.
 
-# Interdisciplinaridade
-
 # Emergência Tecnológica
+
+# Interdisciplinaridade
 
 # REFERÊNCIAS
