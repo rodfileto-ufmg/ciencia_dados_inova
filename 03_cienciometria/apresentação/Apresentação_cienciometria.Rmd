@@ -1,0 +1,355 @@
+---
+title: ""
+author: ""
+# date: March 22, 2005
+output: 
+  revealjs::revealjs_presentation:
+    self_contained: true
+    css: styles.css
+    # reveal_plugins: ["zoom", "menu"]
+    reveal_options:
+      width: 1098
+      height: 1000
+      slideNumber: true
+      controls: false
+bibliography: references.bib
+csl: abnt.csl
+---
+
+```{r include=FALSE}
+
+library(fontawesome)
+library(tippy)
+library(visNetwork)
+library(kableExtra)
+
+```
+
+<center>
+
+UNIVERSIDADE FEDERAL DE MINAS GERAIS
+
+</center>
+
+<center>
+
+<medium>Centro de Desenvolvimento e Planejamento Regional</medium>
+
+</center>
+
+<br>
+
+<center>
+
+CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO
+
+</center>
+
+<br>
+
+<center>
+
+Módulo: **Cienciometria e análise de patentes**
+
+</center>
+
+<br>
+
+<center>
+
+Semestre 2022/1
+
+</center>
+
+<br>
+
+<center>
+
+Professor: Rodrigo Fileto Cuerci Maciel
+
+</center>
+
+# Objetivos desta aula
+
+-   Apresentar alguns conceitos básicos de rede;
+
+-   Discorrer sobre tópicos em cienciometria e análise de patentes.
+
+# Material de aula
+
+O Material desta aula bem como *scripts* utilizados encontram-se em [repositório aberto no Github]([https://github.com/rodfileto-ufmg/ciencia_dados_inova/tree/main/02_data_colecao){target="\_blank"}
+
+# Tópicos
+
+1.  Dados abertos em ciência;
+
+2.  Identificação de tópicos científicos e tecnológicos: algoritmos e técnicas;
+
+3.  Emergência tecnológica;
+
+4.  Vieses de gênero na pesquisa científica;
+
+5.  Medidas de interdisciplinaridade;
+
+6.  Altimetria;
+
+7.  Avaliação de impacto de financiamento.
+
+# Conceitos básicos em rede
+
+Uma rede $(N, g)$ consiste num conjunto de nós (também chamados de vértices) $N = \{1,...,n\}$ e uma matriz $A$ definida para ser uma matriz $n \times n$ na qual $A_{ij}$ representa a relação entre $i$ e $j$. Esta matrix é comumente referida como *matriz de adjacência*, na qual
+
+$$
+    A_{ij}= 
+\begin{cases}
+    1 ,& \text{se } \text{existe uma entre relação os vértices i e j,}\\
+    0,              & \text{de outra forma}
+\end{cases}
+$$
+
+<center>
+
+Matriz adjacente de uma rede hipotética não valorada e não direcionada
+
+</center>
+
+$$\begin{bmatrix}
+0&1&0 \\
+1&1&1 \\
+0&1&0 \\
+\end{bmatrix}$$
+
+<br>
+
+<center>
+
+Representação gráfica da Matriz acima
+
+</center>
+
+```{r echo=TRUE, out.width="50%"}
+library(visNetwork)
+nodes <- data.frame(id = 1:3, label = as.character(1:3))
+edges <- data.frame(from = c(1,2), to = c(2,3))
+visNetwork(nodes, edges, width = "100%", height = 400) %>%
+  visInteraction(dragView = FALSE, dragNodes = FALSE)
+
+```
+
+## Redes valoradas
+
+As redes não valoradas e não direcionadas apontam para relações binárias entre os vértices da rede (a ligação existe ou não existe). Em alguns casos torna-se útil representar as ligações como possuindo força, peso, ou similaridade, utilizando um número real.
+
+Pode-se converter similaridade para comprimento calculando-se recíprocos (inversos multiplicativos) e utilizando aqueles valores como elementos da matriz adjacente, embora isso deva ser considerado como uma transformação aproximada. Na maioria dos casos não há relação matemática formal entre ligações de força e comprimento.
+
+## Redes direcionadas
+
+Uma rede é *direcionada* se é possível que $A_{ij} \neq A_{ji}$ (Em geral uma matriz não simétrica). A matriz adjacente de uma rede direcionada tem como elementos
+
+$$
+    A_{ij}= 
+\begin{cases}
+    1 ,& \text{se } \text{existe uma ligação do vértice j para i,}\\
+    0,              & \text{de outra forma}
+\end{cases}
+$$
+
+Note-se que a direção da ligação parte do segundo elemento para o primeiro.
+
+<br>
+
+<center>
+
+Matriz adjacente de uma rede hipotética direcionada
+
+</center>
+
+$$\begin{bmatrix}
+0&1&0 \\
+0&0&0 \\
+0&0&1 \\
+\end{bmatrix}$$
+
+<br>
+
+<center>
+
+Representação gráfica da Matriz acima
+
+</center>
+
+```{r echo=TRUE, out.width="50%"}
+nodes <- data.frame(id = 1:3, label = as.character(1:3))
+edges <- data.frame(from = c(1,2), to = c(2,3), arrows = c("from", "to"))
+visNetwork(nodes, edges, width = "100%", height = 400) %>%
+  visInteraction(dragView = FALSE, dragNodes = FALSE, zoomView = TRUE)
+
+```
+
+## Rede Bipartida
+
+A rede bipartida é aquele com dois tipos diferentes de vértices e cujas ligações ocorrem apenas entre vértices de diferentes tipos. Neste caso, a rede bipartida é uma matriz retangular chamada de matriz incidente na qual
+
+$$
+    B_{ij}= 
+\begin{cases}
+    1 ,& \text{se } \text{item j pertence ao grupo i,}\\
+    0,              & \text{de outra forma}
+\end{cases}
+$$
+
+Caso queira-se trabalhar com vértices de apenas um tipo, a projeção de *um modo* da forma bipartida pode ser realizada através da operação $P = B^TB$. A matriz $n \times n$ resultante funciona de maneira similar à uma matriz adjacente. A diagonal apresenta valores igual ao número de grupos que cada vértice pertence.
+
+## Componentes
+
+A rede não precisa consistir em apenas um único conjunto conectado de vértices. Muitas redes possuem duas ou mais partes separadas que estão disconectadas e não possuem ligações entre seus elementos.
+
+<center>
+
+Exemplo de rede com dois componentes
+
+</center>
+
+```{r echo=TRUE, out.width="50%"}
+nodes <- data.frame(id = 1:5, label = as.character(1:5))
+edges <- data.frame(from = c(1,2,4), to = c(2,3,5))
+visNetwork(nodes, edges, width = "100%", height = 400) %>%
+  visInteraction(dragView = FALSE, dragNodes = FALSE, zoomView = FALSE)
+```
+
+## Comunidades em rede
+
+-   Embora haja várias definições para o problema de clusterização, a mais comum declara que um cluster corresponde para um conjunto de vértices com mais ligações dentro do conjunto que com o restante da rede. Ou seja, a densidade dentro da comunidade é maior que entre as comunidades [@fortunato2016; @malliaros2013].
+
+-   Para validação de algoritmos com metadados é preciso atentar se [@peel2016]:
+
+    -   os metadados são irrelevantes para a estrutura da rede;
+
+    -   os metadados e as comunidades capturam diferentes aspectos da estrutura da rede;
+
+    -   Falta estrutura de grupo na rede.
+
+## Exemplos de redes
+
+```{r}
+
+tibble::tibble(Rede = c("Internet", "World Wide Web", "Rede de citações", "Malha energética", "Rede de amizades", "Rede metabólica", "Rede Neural", "Rede Trófica"),
+       Vértice = c("Computador ou roteador", "Página da web", "Artigo, patente ou caso legal", "Estação geradora ou subestação", "Pessoa", "Metabólito", "Neurônio", "Espécies"),
+       Ligação = c("Cabo ou coneção sem fio", "Hiperligação", "Citação", "Linha de transmissão", "Amizade", "Reação metabólica", "Sinapse", "predação")) %>%
+  kable(caption = "Exemplos de vértices e ligações em redes") %>%
+  kable_classic()
+  
+
+```
+
+Fonte: [@newman2018, p.106]
+
+<br>
+
+Para discussão:
+
+-   Quais as redes existentes no sistema econômico? E num sistema de inovação?
+
+## Quer saber mais sobre redes?
+
+Conteúdo sobre redes apresentado até aqui foi baseado em Newman [-@newman2018]. Mais sobre redes pode ser consultado em @mcnulty2022 ([disponível online](https://ona-book.org/){target="_blank"}) ou em @barabási2016 ([disponível online](http://networksciencebook.com/){target="_blank"}). Adicionalmente, @jackson2008 explica aspectos gerais de rede bem como sua aplicação nos estudos em economia.
+
+# Identificação de tópicos científicos e tecnológicos
+
+-   Objetiva sintetizar as informações oferecidas em milhares ou milhões de artigos científicos, patentes, ou outras fontes de informação.
+
+-   Constrói agrupamentos (*clusters*) dos documentos analisados que sejam relevantes para o problema de pesquisa ou tomada de decisão.
+
+-   Na maioria dos casos é acompanhado de mapas para visualização e entendimento do tema.
+
+## Síntese de informações
+
+::: {#left-3}
+<img src="./imagens/doc_net.png" width="73%"/>
+:::
+
+::: {#center-3}
+<img src="./imagens/RF_net.png" width="73%"/>
+:::
+
+::: {#right-3}
+<img src="./imagens/TP_net.png"/>
+:::
+
+Rede de documentos -> Rede de frentes de pesquisa -> Rede de paradigmas tecnológicos
+
+## Métodos
+
+De maneira geral, os métodos para a identificação automatizada de tópicos em ciência e tecnologia possuem os seguintes elementos:
+
+-   Definição da rede: quais os vértices e ligações são de interesse para o problema de pesquisa? Quais são compatíveis com os dados disponíveis?
+
+-   Criação da rede: definir a medida de similaridade (ou distância) entre os vértices;
+
+-   Aplicação de algoritmo de detecção de comunidades;
+
+-   Validação dos resultados de maneira qualitativa ou quantitativa.
+
+Clique [aqui](./imagens/methods.jpg){target="_blank"} para ver um exemplo de método de identificação de tópicos científicos.
+
+## Redes de documentos científicos e patentes
+
+<center>
+
+Ligações baseadas em citações
+
+</center>
+
+```{r echo=FALSE, fig.align="center"}
+
+knitr::include_graphics("./imagens/cit_methods.png")
+
+```
+
+Para o cálculo de similaridade no método de similaridade bibliográfica (bibliographic coupling) e co-citação é necessário realizar a projeção da rede bipartida (documentos-referências) para a respectiva matriz adjancente (documentos-documentos).
+
+## Similaridade bibliográfica
+
+Pode-se realizar a contagem bruta de referências em comum entre as duas publicações, ou cálculo de *sobreposição intelectual* que leva em conta a proporção de referências que um par de publicações tem em comum @colavizza2017.
+
+$$\frac{N_{qd}}{min(N_{q}, N_{d})}$$
+
+Onde $N_{qd}$ denota o número de referências em comum entre as publicações *q e d*, e $N_{q}$ e $N_{d}$ denotam o total número de referências das publicações *q e d* respectivamente.
+
+## Similaridade textual
+
+```{=tex}
+\begin{align}
+
+\text{BM25}(D,Q) = \sum_{i=1}^{n} \text{IDF}(q_i) \cdot \frac{f(q_i, D)
+
+\cdot (k_1 + 1)}{f(q_i, D) + k_1 \cdot (1 - b + b \cdot
+
+\frac{\|D\|}{\text{avgdl}})} (\#eq:bm25)
+
+\end{align}
+```
+Onde $f(q_i, D)$ is $q_i$ é a frequência do termo no documento $D$, $|D|$ é o tamanho do documento $D$ em termos, e $avgdl$ é a média de tamanho de todos os $N$ documentos na coleção. $k_1$ and $b$ são parâmetros livres. Na falta de um mecanismo de otimização, @boyack2014 utiliza os valores de 2 e 0,75 respectivamente.
+
+Na equação acima, $\text{IDF}(q_i)$ representa a frequência inversa do termo $q_i$, definida como:
+
+```{=tex}
+\begin{equation}
+
+\text{IDF}_i = log \frac{N - n_{q_i} + 0.5} {n_{q_i} + 0.5} (\#eq:idf)
+
+\end{equation}
+```
+Onde $n_{q_i}$ denota o número de publicações em que o termo $q_i$ ocorre.
+
+## Algoritmos
+
+Para uma visão geral de algoritmos de detecção de comunidades verificar o pacote Igraph [@csárdi2006]. Dou especial atenção para o Algoritmo de Leiden [@traag2019], que pode ser considerado um algoritmo supervisionado, uma vez que permite ao usuário escolher um valor de resolução na detecção de comunidades.
+
+@sjögårde2020 estabelece metodologia, baseada na concentração/distribuição de periódicos por comunidades, como parâmetro para definir resolução de modo a identificar especialidades científicas.
+
+# Emergência Tecnológica
+
+# Interdisciplinaridade
+
+# REFERÊNCIAS
