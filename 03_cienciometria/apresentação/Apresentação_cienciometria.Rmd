@@ -8,8 +8,8 @@ output:
     css: styles.css
     # reveal_plugins: ["zoom", "menu"]
     reveal_options:
-      width: 1098
-      height: 1000
+      width: 960
+      height: 768
       slideNumber: true
       controls: false
 bibliography: references.bib
@@ -77,7 +77,7 @@ Professor: Rodrigo Fileto Cuerci Maciel
 
 # Material de aula
 
-O Material desta aula bem como *scripts* utilizados encontram-se em [repositório aberto no Github](%5Bhttps://github.com/rodfileto-ufmg/ciencia_dados_inova/tree/main/02_data_colecao){target="_blank"}
+O Material desta aula bem como *scripts* utilizados encontram-se em [repositório aberto no Github](https://github.com/rodfileto-ufmg/ciencia_dados_inova/tree/main/03_cienciometria/apresenta%C3%A7%C3%A3o){target="_blank"}.
 
 # Tópicos
 
@@ -214,7 +214,7 @@ Exemplo de rede com dois componentes
 nodes <- data.frame(id = 1:5, label = as.character(1:5))
 edges <- data.frame(from = c(1,2,4), to = c(2,3,5))
 visNetwork(nodes, edges, width = "100%", height = 400) %>%
-  visInteraction(dragView = FALSE, dragNodes = FALSE, zoomView = FALSE)
+  visInteraction(dragView = FALSE, dragNodes = FALSE, zoomView = TRUE)
 ```
 
 ## Comunidades em rede
@@ -235,7 +235,7 @@ visNetwork(nodes, edges, width = "100%", height = 400) %>%
 
 tibble::tibble(Rede = c("Internet", "World Wide Web", "Rede de citações", "Malha energética", "Rede de amizades", "Rede metabólica", "Rede Neural", "Rede Trófica"),
        Vértice = c("Computador ou roteador", "Página da web", "Artigo, patente ou caso legal", "Estação geradora ou subestação", "Pessoa", "Metabólito", "Neurônio", "Espécies"),
-       Ligação = c("Cabo ou coneção sem fio", "Hiperligação", "Citação", "Linha de transmissão", "Amizade", "Reação metabólica", "Sinapse", "predação")) %>%
+       Ligação = c("Cabo ou conexão sem fio", "Hiperligação", "Citação", "Linha de transmissão", "Amizade", "Reação metabólica", "Sinapse", "predação")) %>%
   kable(caption = "Exemplos de vértices e ligações em redes") %>%
   kable_classic()
   
@@ -252,7 +252,7 @@ Para discussão:
 
 ## Quer saber mais sobre redes?
 
-Conteúdo sobre redes apresentado até aqui foi baseado em Newman [-@newman2018]. Mais sobre redes pode ser consultado em @mcnulty2022 ([disponível online](https://ona-book.org/){target="_blank"}) ou em @barabási2016 ([disponível online](http://networksciencebook.com/){target="_blank"}). Adicionalmente, @jackson2008 explica aspectos gerais de rede bem como sua aplicação nos estudos em economia.
+Conteúdo sobre redes apresentado até aqui foi baseado em Newman [-@newman2018]. Mais sobre redes pode ser consultado em Mcnulty [-@mcnulty2022] ([disponível online](https://ona-book.org/){target="_blank"}) ou em Barabási [-@barabási2016] ([disponível online](http://networksciencebook.com/){target="_blank"}). Adicionalmente, Jackson [-@jackson2008] explica aspectos gerais de rede bem como sua aplicação nos estudos em economia.
 
 # Ciência Aberta
 
@@ -266,9 +266,9 @@ Perspectivas de acordo com Friesike et. al. [-@friesike2015].
 
 4.  *Exploratória:* capacidade de atrair diferentes parceiros para resolução de problemas práticos.
 
----------------------------------------------------------------------
+------------------------------------------------------------------------
 
-O centro para Ciência e Tecnologia da Universidade de Leiden (CWTS) direciona suas atenções para aspectos mais operacionais do compartilhamento de dados. Em sua política de ciência aberta enumera as seguintes perspectivas:
+O Centro para Ciência e Tecnologia da Universidade de Leiden (CWTS) direciona suas atenções para aspectos mais operacionais do compartilhamento de dados. Em sua política de ciência aberta enumera as seguintes perspectivas:
 
 1.  Publicações de acesso aberto;
 2.  Dados abertos;
@@ -278,7 +278,7 @@ O centro para Ciência e Tecnologia da Universidade de Leiden (CWTS) direciona s
 
 A disponibilidade de dados e informações depende de capacidades organizacionais ou mesmo de capacidades nacionais gestadas no âmbito de um sistema nacional de inovação.
 
-Neste sentido, Robinson-Garcia e Rafols [-@robinson-garcia] explicam como diferentes contextos nacionais tratam o processo de internacionalização da ciência de forma diferente. Para países menos desenvolvidos, sem capacidade de retenção de mão de obra qualificada, ocorre o risco de fuga de cérebros (brain-drain).
+Neste sentido, Robinson-Garcia e Rafols [-@robinson-garcia2019] explicam como diferentes contextos nacionais tratam o processo de internacionalização da ciência de forma diferente. Para países menos desenvolvidos, sem capacidade de retenção de mão de obra qualificada, ocorre o risco de fuga de cérebros (brain-drain).
 
 # Identificação de tópicos científicos e tecnológicos
 
@@ -318,7 +318,7 @@ De maneira geral, os métodos para a identificação automatizada de tópicos em
 
 Clique [aqui](./imagens/methods.jpg){target="_blank"} para ver um exemplo de método de identificação de tópicos científicos.
 
-## Redes de documentos científicos e patentes
+## Redes de documentos científicos
 
 <center>
 
@@ -332,7 +332,7 @@ knitr::include_graphics("./imagens/cit_methods.png")
 
 ```
 
-Para o cálculo de similaridade no método de similaridade bibliográfica (bibliographic coupling) e co-citação é necessário realizar a projeção da rede bipartida (documentos-referências) para a respectiva matriz adjancente (documentos-documentos).
+Para o cálculo de similaridade no método de ligação bibliográfica (bibliographic coupling) e co-citação é necessário realizar a projeção da rede bipartida (documentos-referências) para a respectiva matriz adjancente (documentos-documentos).
 
 ## Mapas globais e locais
 
@@ -343,16 +343,16 @@ Para elaborar mapas científicos, Klavans e Boyack [-@klavans2011] demonstram qu
 knitr::include_graphics("./imagens/global_local.png")
 ```
 
---------------------------------------
+------------------------------------------------------------------------
 
 Estratégias para melhorar a qualidade de mapas locais:
 
 1.  Identificar mapas em pequenos períodos para verificar mudanças na estrutura conceitual do campo;
 2.  Explorar outras fontes de informação relacionadas com a literatura alvo. Por exemplo, expandindo a rede de citação.
 
-## Similaridade bibliográfica
+## Ligação bibliográfica
 
-Pode-se realizar a contagem bruta de referências em comum entre as duas publicações, ou cálculo de *sobreposição intelectual* [@colavizza2017] que leva em conta a proporção de referências que um par de publicações tem em comum.
+Pode-se realizar a contagem bruta de referências em comum entre duas publicações[@waltman2020], ou cálculo de *sobreposição intelectual* [@colavizza2017] que leva em conta a proporção de referências que um par de publicações tem em comum.
 
 $$\frac{N_{qd}}{min(N_{q}, N_{d})}$$
 
@@ -386,7 +386,7 @@ Onde $n_{q_i}$ denota o número de publicações em que o termo $q_i$ ocorre.
 
 ## Algoritmos
 
-Para uma visão geral de algoritmos de detecção de comunidades verificar o pacote Igraph [@csárdi2006]. Dou especial atenção para o Algoritmo de Leiden [@traag2019], que pode ser considerado um algoritmo supervisionado, uma vez que permite ao usuário escolher um valor de resolução na detecção de comunidades.
+Para uma visão geral de algoritmos de detecção de comunidades verificar o pacote Igraph [@csárdi2006]. Destacamos especial atenção para o Algoritmo de Leiden [@traag2019], que pode ser considerado um algoritmo supervisionado, uma vez que permite ao usuário escolher um valor de resolução na detecção de comunidades.
 
 @sjögårde2020 estabelece metodologia, baseada na concentração/distribuição de periódicos por comunidades, como parâmetro para definir resolução de modo a identificar especialidades científicas.
 
@@ -406,9 +406,37 @@ De acordo com Rotolo et. al. [-@rotolo2015] os cinco atributos de uma tecnologia
 
 ## Covid-19: emergência tecnológica em tempos de emergência
 
-## Identificando tópicos emergentes: rede de citações
+```{r echo=FALSE, fig.align='center', out.width="70%"}
+
+knitr::include_graphics("./imagens/covid-evolution-scielo.png")
+
+```
+
+<center> Evolução de publicações separadas por área científica com destaque para a Covid-19 (a) e pelo total de documentos analisados na Scielo (b)</center>
+
+## Covid-19: emergência tecnológica em tempos de emergência
+
+Coccia [-@coccia2021] sugere duas classificações para campos de pesquisa:
+
+-   *Direcionados por problemas* sociais da natureza e/ou sociedade cuja evolução é dada de maneira endógena devido aos processos próprios da ciência (interação social entre grupos);
+
+-   *Direcionados pela crise* que cria ameças para a sociedade e demanda uma resposta da comunidade científica num curto espaço de tempo.
+
+## Identificando tópicos emergentes: rede de citação
+
+As formas mais comuns de identificação de tópicos emergentes em cienciometria utilizam análise de citações e/ou análise textual do conteúdo dos documentos.
+
+-   Small et. al. [-@small2014] utilizam uma complexa metodologia combinando clusters de co-citação com clusters de citação direta para definir um valor de emergência tecnológica.
+
+```{r echo=FALSE, fig.align='center', out.width="70%"}
+
+knitr::include_graphics("./imagens/dc-cc.png")
+
+```
 
 ## Identificando tópicos emergentes: análise textual
+
+## Bela adormecida: um caso especial de emergência
 
 # Interdisciplinaridade
 

@@ -55,4 +55,11 @@ div .csl-entry {
   width:33.33%;
   z-index:-10;
 }
+
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  box-shadow: none; 
+  }
   
