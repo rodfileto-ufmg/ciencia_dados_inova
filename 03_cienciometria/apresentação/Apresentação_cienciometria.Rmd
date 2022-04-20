@@ -436,6 +436,10 @@ knitr::include_graphics("./imagens/dc-cc.png")
 
 ## Identificando tópicos emergentes: análise textual
 
+De forma similar aos métodos baseados em citação, a análise textual de emergência implica em subtrair valores passados da ocorrência de um termo das
+
+[-@ranaei2020]
+
 ## Bela adormecida: um caso especial de emergência
 
 # Interdisciplinaridade
