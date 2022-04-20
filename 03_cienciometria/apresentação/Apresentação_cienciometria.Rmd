@@ -25,49 +25,25 @@ library(kableExtra)
 
 ```
 
-<center>
+<center>UNIVERSIDADE FEDERAL DE MINAS GERAIS</center>
 
-UNIVERSIDADE FEDERAL DE MINAS GERAIS
-
-</center>
-
-<center>
-
-<medium>Centro de Desenvolvimento e Planejamento Regional</medium>
-
-</center>
+<center><medium>Centro de Desenvolvimento e Planejamento Regional</medium></center>
 
 <br>
 
-<center>
-
-CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO
-
-</center>
+<center>CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO</center>
 
 <br>
 
-<center>
-
-Módulo: **Cienciometria e análise de patentes**
-
-</center>
+<center>Módulo: **Cienciometria e análise de patentes**</center>
 
 <br>
 
-<center>
-
-Semestre 2022/1
-
-</center>
+<center>Semestre 2022/1</center>
 
 <br>
 
-<center>
-
-Professor: Rodrigo Fileto Cuerci Maciel
-
-</center>
+<center>Professor: Rodrigo Fileto Cuerci Maciel</center>
 
 # Objetivos desta aula
 
@@ -436,12 +412,24 @@ knitr::include_graphics("./imagens/dc-cc.png")
 
 ## Identificando tópicos emergentes: análise textual
 
-De forma similar aos métodos baseados em citação, a análise textual de emergência implica em subtrair valores passados da ocorrência de um termo das
+A análise textual de emergência implica em identificar termos cuja ocorrência sejam mais recentes que os demais termos.
 
-[-@ranaei2020]
+-   Resultados satisfatórios foram alcançados com alto detalhamento de termos detalhamento utilizando a contagem TF-IDF nos tópicos "diodos emissor de luz e memória flash" [@ranaei2020]. Outras duas técnicas utilizadas por Ranaei et. al. foram Modelagem de Tópicos e *Emergence Score* [@carley2018; @porter2018].
 
 ## Bela adormecida: um caso especial de emergência
 
-# Interdisciplinaridade
+Publicações científicas tendem a ter um máximo de citações poucos anos após as publicações seguido de um declínio. A partir de uma ampla análise temporal de artigos da Web of Science (cerca de 22 milhões) Ke et. al. [@ke2015] estabeleceram metodologia exemplificada pela figura abaixo para identificar artigos com citações atrasadas.
+
+```{r echo=FALSE, fig.align='center', out.width="60%"}
+
+knitr::include_graphics("./imagens/SB.png")
+
+```
+
+-----------------------------------------
+
+Ye e Bornmann [@ye2018] extenderam a metáfora da trajetória de citações para adicionar uma nova nomenclatura - garotas espertas (*smart girls)* - para denotar artigos que recebem citações imediatas com um rápido declínio. O termo foi duramente rebatido em editorial do periódico:
+
+*"There is no mythological grounding or justification for the use of the term. Rather, the label seems entirely a creation of the authors, building upon the previous sexualization of citation trajectories. As a result, the symbolism now relates intelligent women to short-lived scientific contributions and beautiful women to delayed recognition"*[@sugimoto2018].
 
 # REFERÊNCIAS
