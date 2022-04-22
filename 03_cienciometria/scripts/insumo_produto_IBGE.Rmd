@@ -1,0 +1,160 @@
+---
+title: "Visualização de rede a partir da matriz insumo-produto do IBGE"
+author: "Rodrigo Fileto Cuerci Maciel"
+date: "`r Sys.Date()`"
+# output: rmarkdown::html_vignette
+output: rmdformats::material
+cards: false
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r include=FALSE}
+
+# Primeiro chunk para carregar pacotes e arquivos
+
+library(tidyverse)
+library(visNetwork)
+library(igraph)
+library(highcharter) # apenas para colorir os vértices
+
+
+# Carregar tabela com codigo dos produtos
+cod_produtos <- read_csv("03_cienciometria/dados/cod_produtos.csv") %>%
+  mutate(id = 1:nrow(.)) %>% # criando coluna de id para visnetwork
+  rename(label = desc_produto_20) %>% # criando coluna label para visnetwork
+  select(id, label) # inverter ordem colunas para igraph
+
+
+# Carregar tabela insumo-produto
+insumo_produto_20 <- read_csv("03_cienciometria/dados/insumo_produto_nivel_20.csv", col_names = FALSE) %>%
+  mutate(across(everything(), ~ as.numeric(gsub(" ", "", .x, fixed = TRUE)))) %>%
+  as.matrix()
+
+
+
+
+```
+
+# Introdução
+
+Trata-se de explicação de como gerar a visualização em rede da matriz insumo-produto do Brasil. De maneira geral, o processo consiste nas seguintes etapas:
+
+1.    coleta de dados do IBGE;
+1.    formatação da matriz em lista de ligações;
+1.    Visualização no `visnetwork`
+
+# Coleta de dados do IBGE
+
+Foi coletada a matrix insumo-produto do nível 20 do ano de 2015 diretamente no site do IBGE^[Disponível em <https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9085-matriz-de-insumo-produto.html?=&t=resultados>]. Especificamente, foi utilizada a planilha 3 da tabela, cujo título é *Oferta e demanda da produção nacional a preço básico - 2015*, referente ao consumo diário das atividades.
+
+Após a formatação manual com exclusão de linhas e colunas duas tabelas são carregadas no R. Consideramos a matriz insumo-produto como a **matriz adjacente** de uma rede direcionada.
+
+```{r message=FALSE, warning=FALSE}
+
+# Carregar tabela com codigo dos produtos
+cod_produtos <- read_csv("03_cienciometria/dados/cod_produtos.csv") %>%
+  mutate(id = 1:nrow(.)) %>% # criando coluna de id para visnetwork
+  rename(label = desc_produto_20) %>% # criando coluna label para visnetwork
+  select(id, label) # inverter ordem colunas para igraph
+
+# Carregar tabela insumo-produto
+insumo_produto_20 <- read_csv("03_cienciometria/dados/insumo_produto_nivel_20.csv", col_names = FALSE) %>%
+  mutate(across(everything(), ~ as.numeric(gsub(" ", "", .x, fixed = TRUE)))) %>%
+  as.matrix()
+
+```
+
+
+# Formatação da matriz em lista de ligações
+
+Tendo em vista simplificar a rede, de forma a não conter múltiplas ligações entre cada par de categorias, foi realizada a subtração do triângulo superior com o trângulo inferior da matriz.
+
+```{r message=FALSE, warning=FALSE}
+
+# Atribuir nome das categorias como colunas
+colnames(insumo_produto_20) <- cod_produtos$label
+
+# Atribuir nome das categorias como linhas
+rownames(insumo_produto_20) <- cod_produtos$label
+
+# Extrair triângulo superior da matrix
+insumo_produto_20_superior <- insumo_produto_20
+insumo_produto_20_superior[!(upper.tri(insumo_produto_20_superior, diag = FALSE))] <- 0
+
+
+# Extrair triângulo inferior da matrix
+
+insumo_produto_20_inferior <- insumo_produto_20
+
+insumo_produto_20_inferior[!(lower.tri(insumo_produto_20_inferior, diag = FALSE))] <- 0
+
+# Subtrair matriz superior da inferior
+
+insumo_produto_20_liquido <- insumo_produto_20_superior - t(insumo_produto_20_inferior)
+
+```
+
+
+Em seguida, foi gerada a lista de ligações a partir da matriz resultante. Naquelas linhas que apresentaram valores negativos, as categorias foram invertidas. Para fins de visualização foi selecionada a maior ligação para cada insumo.
+
+```{r message=FALSE, warning=FALSE}
+# Formatar matriz para "pair-list" 
+# Inverter ordem do par quando valor negativo
+
+ligacoes <- as.data.frame(as.table(insumo_produto_20_liquido)) %>%
+  filter(Freq != 0) %>%
+  mutate(label_from = as.character(case_when(Freq < 0 ~ Var2,
+                          Freq > 0 ~ Var1,
+                          TRUE ~ Var1)),
+         label_to = as.character(case_when(Freq < 0 ~ Var1,
+                        Freq > 0 ~ Var2,
+                        TRUE ~ Var2))) %>%
+  mutate(valor = abs(Freq)) %>%
+  select(label_from, label_to, valor) %>%
+  inner_join(cod_produtos, by = c("label_from" = "label")) %>%
+  inner_join(cod_produtos, by = c("label_to" = "label")) %>%
+  select(from = id.x, to = id.y, valor)
+```
+
+
+# Visualização da rede
+
+Por fim, segue o código para visualização da rede. As cores e tamanho representam a intensidade de consumo da atividade. Quanto maior e mais vermelho um vértice maior o seu consumo intermediário.
+
+```{r}
+# Gerar visualização no visnetwork
+
+# Atualizar cod_produtos
+
+cor <- ligacoes %>%
+  group_by(to) %>%
+  summarise(value = sum(valor)) %>%
+  mutate(color = colorize(value,colors = c("#FFFFFF", "5E0010", "#4b000c")))
+
+cod_produtos_novo <- cod_produtos %>%
+  left_join(cor, by = c("id" = "to")) %>%
+  filter(id %in% c(ligacoes$from, ligacoes$to))
+  
+ligacoes_novo <- ligacoes %>%
+  group_by(from) %>%
+  slice_max(order_by = valor, n = 1) %>% # Selecionada a ligação mais forte para cada insumo
+  mutate(arrows = "to")
+
+set.seed(1234)
+visNetwork(cod_produtos_novo, ligacoes_novo, height = "900px", width = "100%")
+
+```
+
+# Códigos utilizados
+
+Os códigos utilizados podem ser acessados no repositório do github

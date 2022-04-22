@@ -18,32 +18,54 @@ csl: abnt.csl
 
 ```{r include=FALSE}
 
-library(fontawesome)
-library(tippy)
 library(visNetwork)
 library(kableExtra)
 
 ```
 
-<center>UNIVERSIDADE FEDERAL DE MINAS GERAIS</center>
+<center>
 
-<center><medium>Centro de Desenvolvimento e Planejamento Regional</medium></center>
+UNIVERSIDADE FEDERAL DE MINAS GERAIS
 
-<br>
+</center>
 
-<center>CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO</center>
+<center>
 
-<br>
+<medium>Centro de Desenvolvimento e Planejamento Regional</medium>
 
-<center>Módulo: **Cienciometria e análise de patentes**</center>
-
-<br>
-
-<center>Semestre 2022/1</center>
+</center>
 
 <br>
 
-<center>Professor: Rodrigo Fileto Cuerci Maciel</center>
+<center>
+
+CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO
+
+</center>
+
+<br>
+
+<center>
+
+Módulo: **Cienciometria e análise de patentes**
+
+</center>
+
+<br>
+
+<center>
+
+Semestre 2022/1
+
+</center>
+
+<br>
+
+<center>
+
+Professor: Rodrigo Fileto Cuerci Maciel
+
+</center>
 
 # Objetivos desta aula
 
@@ -78,7 +100,7 @@ Uma rede $(N, g)$ consiste num conjunto de nós (também chamados de vértices) 
 $$
     A_{ij}= 
 \begin{cases}
-    1 ,& \text{se } \text{existe uma entre relação os vértices i e j,}\\
+    1 ,& \text{se } \text{existe uma relação entre os vértices i e j,}\\
     0,              & \text{de outra forma}
 \end{cases}
 $$
@@ -103,14 +125,18 @@ Representação gráfica da Matriz acima
 
 </center>
 
+<center>
+
 ```{r echo=TRUE, out.width="50%"}
 library(visNetwork)
 nodes <- data.frame(id = 1:3, label = as.character(1:3))
 edges <- data.frame(from = c(1,2), to = c(2,3))
-visNetwork(nodes, edges, width = "100%", height = 400) %>%
-  visInteraction(dragView = FALSE, dragNodes = FALSE)
+visNetwork(nodes, edges, width = "50%", height = 400) %>%
+  visInteraction(dragView = TRUE, dragNodes = FALSE, zoomView = FALSE)
 
 ```
+
+</center>
 
 ## Redes valoradas
 
@@ -143,7 +169,7 @@ Matriz adjacente de uma rede hipotética direcionada
 $$\begin{bmatrix}
 0&1&0 \\
 0&0&0 \\
-0&0&1 \\
+0&1&0 \\
 \end{bmatrix}$$
 
 <br>
@@ -154,13 +180,17 @@ Representação gráfica da Matriz acima
 
 </center>
 
+<center>
+
 ```{r echo=TRUE, out.width="50%"}
 nodes <- data.frame(id = 1:3, label = as.character(1:3))
 edges <- data.frame(from = c(1,2), to = c(2,3), arrows = c("from", "to"))
-visNetwork(nodes, edges, width = "100%", height = 400) %>%
-  visInteraction(dragView = FALSE, dragNodes = FALSE, zoomView = TRUE)
+visNetwork(nodes, edges, width = "50%", height = 400) %>%
+  visInteraction(dragView = TRUE, dragNodes = FALSE, zoomView = FALSE)
 
 ```
+
+</center>
 
 ## Rede Bipartida
 
@@ -186,12 +216,16 @@ Exemplo de rede com dois componentes
 
 </center>
 
+<center>
+
 ```{r echo=TRUE, out.width="50%"}
 nodes <- data.frame(id = 1:5, label = as.character(1:5))
 edges <- data.frame(from = c(1,2,4), to = c(2,3,5))
-visNetwork(nodes, edges, width = "100%", height = 400) %>%
-  visInteraction(dragView = FALSE, dragNodes = FALSE, zoomView = TRUE)
+visNetwork(nodes, edges, width = "50%", height = 400) %>%
+  visInteraction(dragView = TRUE, dragNodes = FALSE, zoomView = FALSE)
 ```
+
+</center>
 
 ## Comunidades em rede
 
@@ -224,7 +258,7 @@ Fonte: [@newman2018, p.106]
 
 Para discussão:
 
--   Quais as redes existentes no sistema econômico? E num sistema de inovação?
+-   Quais as redes existentes no sistema econômico? E em sistemas de inovação?
 
 ## Quer saber mais sobre redes?
 
@@ -252,9 +286,7 @@ O Centro para Ciência e Tecnologia da Universidade de Leiden (CWTS) direciona s
 
 ## Ciência aberta e capacidades
 
-A disponibilidade de dados e informações depende de capacidades organizacionais ou mesmo de capacidades nacionais gestadas no âmbito de um sistema nacional de inovação.
-
-Neste sentido, Robinson-Garcia e Rafols [-@robinson-garcia2019] explicam como diferentes contextos nacionais tratam o processo de internacionalização da ciência de forma diferente. Para países menos desenvolvidos, sem capacidade de retenção de mão de obra qualificada, ocorre o risco de fuga de cérebros (brain-drain).
+Para discussão: a capacidade de absorção e de análise de dados e informações depende de capacidades organizacionais, ou mesmo de capacidades nacionais gestadas no âmbito de um sistema nacional de inovação.
 
 # Identificação de tópicos científicos e tecnológicos
 
@@ -388,7 +420,11 @@ knitr::include_graphics("./imagens/covid-evolution-scielo.png")
 
 ```
 
-<center> Evolução de publicações separadas por área científica com destaque para a Covid-19 (a) e pelo total de documentos analisados na Scielo (b)</center>
+<center>
+
+Evolução de publicações separadas por área científica com destaque para a Covid-19 (a) e pelo total de documentos analisados na Scielo (b)
+
+</center>
 
 ## Covid-19: emergência tecnológica em tempos de emergência
 
@@ -426,7 +462,7 @@ knitr::include_graphics("./imagens/SB.png")
 
 ```
 
------------------------------------------
+------------------------------------------------------------------------
 
 Ye e Bornmann [@ye2018] extenderam a metáfora da trajetória de citações para adicionar uma nova nomenclatura - garotas espertas (*smart girls)* - para denotar artigos que recebem citações imediatas com um rápido declínio. O termo foi duramente rebatido em editorial do periódico:
 
