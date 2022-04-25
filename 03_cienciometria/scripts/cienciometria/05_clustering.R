@@ -11,6 +11,10 @@ min_cluster_size = 5
 
 citing_cited <- read_csv("./03_cienciometria/dados/citing_cited.csv")
 
+#### Defining the links between documents ####
+
+# Example below: bibliographic coupling
+
 bib_coupling <- citing_cited %>%
   inner_join(select(citing_cited, UT_x, UT_y), by = "UT_y") %>%
   filter(!(UT_x.x == UT_x.y)) %>%
@@ -188,7 +192,55 @@ write.table(cluster_similarity, "./03_cienciometria/dados/network_clusters.txt",
 rstudioapi::terminalExecute(glue::glue("java -jar VOSviewer.jar -map {normalizePath(getwd())}//03_cienciometria/dados/map_clusters.txt -network {normalizePath(getwd())}/03_cienciometria/dados/network_clusters.txt -largest_component -attraction 4 -repulsion -1"))
 
 
-#### 
+#### Mapa de documentos ####
+
+map_doc <- subset(new_core, select = c("name", "community", "PY", "WC")) %>%
+  mutate(WC = gsub(" ", "", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub(" ", "", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub("LIBRARY;", "LIBRARY", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub("REMOTE;", "REMOTE", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub("COMPUTER;", "COMPUTER", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub("PHOTOGRAPHIC;", "PHOTOGRAPHIC", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub("CELL;BIOLOGY", "CELLBIOLOGY", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub("METALLURGICAL;", "METALLURGICAL", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub("MATERIALS;", "MATERIALS", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub("SOFTWARE;", "SOFTWARE", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub(";APPLICATIONS", "APPLICATIONS", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub("INFORMATION;", "INFORMATION", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub("&;", "", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub(";&", "", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub(",;", "", WC, fixed = TRUE)) %>%
+  mutate(WC = gsub(";;", ";", WC, fixed = TRUE)) %>%
+  cSplit("WC", sep = ";", direction = "long") %>%
+  mutate(WC = gsub("[^A-Za-z ]", "", WC)) %>%
+  mutate(WC = tolower(WC)) %>%
+  left_join(CWTS_Leiden_Ranking_2017_Main_fields) %>%
+  distinct(name, Field) %>%
+  filter(!(is.na(Field))) %>%
+  mutate(id = paste0(name,"_", Field), value = 1) %>% rename(group = Field) %>% left_join(colors)
+
+
+network_doc <- read_csv("./intelligence innovation/Data/full_graph.csv") %>%
+  filter(item1 %in% new_core$name & item2 %in% new_core$name) %>% left_join(map_doc, by = c("item1" = "name")) %>%
+  left_join(map_doc, by = c("item2" = "name")) %>% select(from = id.x, to = id.y, weight) %>% filter(!(is.na(from) | (is.na(to))))
+
+
+map_doc <- select(map_doc, id, group, color_science)
+
+
+net_doc <- graph_from_data_frame(network_doc, vertices = map_doc)
+E(net_doc)$lty <- 0
+
+E(net_doc)$color <- "#FF000000"
+
+system.time({
+  l <- layout_with_drl(net_doc)
+})
+
+png("./intelligence innovation/Output/shiny/RF/www/doc_net.png", width = 20, height = 20, res = 500, units = "in", bg="transparent")
+plot(net_doc, layout = l, vertex.label = NA,
+     vertex.color = adjustcolor(V(net_doc)$color_science, alpha.f = .8), vertex.size = 0.8, vertex.frame.color = "#FF000000")
+dev.off()
 
 
 
