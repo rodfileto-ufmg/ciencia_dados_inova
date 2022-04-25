@@ -1,0 +1,92 @@
+---
+title: ""
+author: ""
+# date: March 22, 2005
+output: 
+  revealjs::revealjs_presentation:
+    self_contained: true
+    css: styles.css
+    # reveal_plugins: ["zoom", "menu"]
+    reveal_options:
+      width: 960
+      height: 768
+      slideNumber: true
+      controls: false
+bibliography: references.bib
+csl: abnt.csl
+---
+
+```{r include=FALSE}
+
+library(visNetwork)
+library(kableExtra)
+
+```
+
+<center>
+
+UNIVERSIDADE FEDERAL DE MINAS GERAIS
+
+</center>
+
+<center>
+
+<medium>Centro de Desenvolvimento e Planejamento Regional</medium>
+
+</center>
+
+<br>
+
+<center>
+
+CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO
+
+</center>
+
+<br>
+
+<center>
+
+Módulo: **Cienciometria e análise de patentes**
+
+</center>
+
+<br>
+
+<center>
+
+Semestre 2022/1
+
+</center>
+
+<br>
+
+<center>
+
+Professor: Rodrigo Fileto Cuerci Maciel
+
+</center>
+
+# Objetivos desta aula
+
+-   Apresentar funcionalidades do aplicativo [VOSviewer](https://www.vosviewer.com/){target="_blank"};
+
+-   Apresentar um exemplo de análise de dados em cienciometria através do R.
+
+# Material de aula
+
+O Material desta aula bem como *scripts* utilizados encontram-se em [repositório aberto no Github](https://github.com/rodfileto-ufmg/ciencia_dados_inova/tree/main/03_cienciometria/apresenta%C3%A7%C3%A3o){target="_blank"}.
+
+# Coleta de dados
+
+Para as análises tanto no VOSviewer quanto no R utilizaremos dados coletados na Web of Science (WoS). É necessário subscrição para acessar este recurso. O acesso pode ser realizado através do Portal Capes.
+
+# Estratégias de coleta
+
+- Tópico (Ex: "Complex Network");
+- Periódico (Ex: "Econometrica");
+- Agência de financiamento (EX: CAPES OR "Coordenação de Aperfeiçoamento de Pessoal de Nível Superior");
+- Dentre outros.
+
+
+# REFERÊNCIAS
