@@ -216,6 +216,7 @@
 <li><a href="#coleta-de-dados-do-ibge">Coleta de dados do IBGE</a></li>
 <li><a href="#formatação-da-matriz-em-lista-de-ligações">Formatação da matriz em lista de ligações</a></li>
 <li><a href="#visualização-da-rede">Visualização da rede</a></li>
+<li><a href="#códigos-utilizados">Códigos utilizados</a></li>
 </ul>
 </div>
 </nav>
@@ -296,7 +297,7 @@
 </div>
 <div id="visualização-da-rede" class="section level1">
 <h1>Visualização da rede</h1>
-<p>Por fim, segue o código para visualização da rede. As cores representam a intensidade de consumo da atividade. Quanto m</p>
+<p>Por fim, segue o código para visualização da rede. As cores e tamanho representam a intensidade de consumo da atividade. Quanto maior e mais vermelho um vértice maior o seu consumo intermediário.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gerar visualização no visnetwork</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Atualizar cod_produtos</span></span>
@@ -315,10 +316,14 @@
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> valor, <span class="at">n =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> <span class="co"># Selecionada a ligação mais forte para cada insumo</span></span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">arrows =</span> <span class="st">&quot;to&quot;</span>)</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">visNetwork</span>(cod_produtos_novo, ligacoes_novo, <span class="at">height =</span> <span class="st">&quot;900px&quot;</span>, <span class="at">width =</span> <span class="st">&quot;100%&quot;</span>)</span></code></pre></div>
-<div id="htmlwidget-74463c20b4ccadd53246" style="width:100%;height:900px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-74463c20b4ccadd53246">{"x":{"nodes":{"id":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],"label":["Agricultura, pecuária, produção florestal, pesca e aquicultura","Indústrias extrativas","Indústrias de transformação","Eletricidade e gás","Água, esgoto, atividades de gestão de resíduos e descontaminação","Construção","Comércio; reparação de veículos automotores e motocicletas","Transporte, armazenagem e correio","Alojamento e alimentação","Informação e comunicação","Atividades financeiras, de seguros e serviços relacionados","Atividades imobiliárias","Atividades científicas, profissionais e técnicas","Atividades administrativas e serviços complementares","Administração pública, defesa e seguridade social","Educação","Saúde humana e serviços sociais","Artes, cultura, esporte e recreação","Outras atividades de serviços"],"value":[46951,61744,556319,18402,8367,191038,190909,29190,86213,36810,55572,15193,31262,7716,183969,61271,101033,11702,38916],"color":["#9E9E9E","#82696D","#4B000C","#D3D3D3","#F4F4F4","#54111C","#5D232C","#C9C9C9","#79575D","#B3B3B3","#948C8D","#DEDEDE","#BEBEBE","#FFFFFF","#66343C","#8B7A7D","#6F464C","#E9E9E9","#A8A8A8"]},"edges":{"from":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,17,18,19],"to":[3,3,6,3,15,15,3,3,19,13,15,7,3,15,17,15,10,17],"valor":[109105,88334,130123,14003,9848,12506,141135,44310,10990,27931,52324,39045,92877,33431,573,60,2432,3604],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":"100%","height":"900px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-1b4ff99564eb6e8884a5" style="width:100%;height:900px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1b4ff99564eb6e8884a5">{"x":{"nodes":{"id":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],"label":["Agricultura, pecuária, produção florestal, pesca e aquicultura","Indústrias extrativas","Indústrias de transformação","Eletricidade e gás","Água, esgoto, atividades de gestão de resíduos e descontaminação","Construção","Comércio; reparação de veículos automotores e motocicletas","Transporte, armazenagem e correio","Alojamento e alimentação","Informação e comunicação","Atividades financeiras, de seguros e serviços relacionados","Atividades imobiliárias","Atividades científicas, profissionais e técnicas","Atividades administrativas e serviços complementares","Administração pública, defesa e seguridade social","Educação","Saúde humana e serviços sociais","Artes, cultura, esporte e recreação","Outras atividades de serviços"],"value":[46951,61744,556319,18402,8367,191038,190909,29190,86213,36810,55572,15193,31262,7716,183969,61271,101033,11702,38916],"color":["#9E9E9E","#82696D","#4B000C","#D3D3D3","#F4F4F4","#54111C","#5D232C","#C9C9C9","#79575D","#B3B3B3","#948C8D","#DEDEDE","#BEBEBE","#FFFFFF","#66343C","#8B7A7D","#6F464C","#E9E9E9","#A8A8A8"]},"edges":{"from":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,17,18,19],"to":[3,3,6,3,15,15,3,3,19,13,15,7,3,15,17,15,10,17],"valor":[109105,88334,130123,14003,9848,12506,141135,44310,10990,27931,52324,39045,92877,33431,573,60,2432,3604],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":"100%","height":"900px","idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="códigos-utilizados" class="section level1">
+<h1>Códigos utilizados</h1>
+<p>Os códigos utilizados podem ser acessados no repositório do github</p>
 </div>
 <div class="footnotes">
 <hr />

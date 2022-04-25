@@ -157,4 +157,4 @@ visNetwork(cod_produtos_novo, ligacoes_novo, height = "900px", width = "100%")
 
 # Códigos utilizados
 
-Os códigos utilizados podem ser acessados no repositório do github
+Os códigos utilizados podem ser acessados no repositório do github.
