@@ -12,20 +12,20 @@ myswitch <- function (remDr, windowId)
 }
 
 
-# rD <- rsDriver(chromever = "100.0.4896.60") # runs a chrome browser, wait for necessary files to download
-# remDr <- rD$client
+rD <- rsDriver(chromever = "100.0.4896.60") # runs a chrome browser, wait for necessary files to download
+remDr <- rD$client
 
-rstudioapi::terminalExecute('java -Dwebdriver.chrome.driver="chromedriver" -jar selenium-server-standalone-3.9.1.jar')
-
-remDr <- remoteDriver(
-  remoteServerAddr = "localhost",
-  port = 4444L,
-  browserName = "chrome"
-)
-
-remDr$getStatus()
-
-remDr$open()
+# rstudioapi::terminalExecute('java -Dwebdriver.chrome.driver="chromedriver" -jar selenium-server-standalone-3.9.1.jar')
+# 
+# remDr <- remoteDriver(
+#   remoteServerAddr = "localhost",
+#   port = 4444L,
+#   browserName = "chrome"
+# )
+# 
+# remDr$getStatus()
+# 
+# remDr$open()
 
 remDr$navigate("https://sistemas.ufmg.br/idp/login.jsp")
 

@@ -79,7 +79,7 @@ O Material desta aula bem como *scripts* utilizados encontram-se em [repositóri
 
 # Coleta de dados
 
-Para as análises tanto no VOSviewer quanto no R utilizaremos dados coletados na Web of Science (WoS). É necessário subscrição para acessar este recurso. O acesso pode ser realizado através do Portal Capes.
+Para as análises tanto no VOSviewer quanto no R utilizaremos dados coletados na Web of Science (WoS). É necessário subscrição para este recurso cujo acesso pode ser realizado através do Portal Capes.
 
 # Estratégias de coleta
 
@@ -87,6 +87,12 @@ Para as análises tanto no VOSviewer quanto no R utilizaremos dados coletados na
 - Periódico (Ex: "Econometrica");
 - Agência de financiamento (EX: CAPES OR "Coordenação de Aperfeiçoamento de Pessoal de Nível Superior");
 - Dentre outros.
+
+Para os objetivos desta aula sugere-se coletar cerca de 4000 documentos no formato "plain text" incluindo as referências citadas.
+
+# VOSviewer
+
+
 
 
 # REFERÊNCIAS
