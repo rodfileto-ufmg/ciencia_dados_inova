@@ -23,49 +23,24 @@ library(kableExtra)
 
 ```
 
-<center>
-
-UNIVERSIDADE FEDERAL DE MINAS GERAIS
-
-</center>
-
-<center>
-
-<medium>Centro de Desenvolvimento e Planejamento Regional</medium>
-
-</center>
+<center>UNIVERSIDADE FEDERAL DE MINAS GERAIS</center>
+<center><medium>Centro de Desenvolvimento e Planejamento Regional</medium></center>
 
 <br>
 
-<center>
-
-CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO
-
-</center>
+<center>CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO</center>
 
 <br>
 
-<center>
-
-Módulo: **Cienciometria e análise de patentes**
-
-</center>
+<center>Módulo: **Cienciometria e análise de patentes**</center>
 
 <br>
 
-<center>
-
-Semestre 2022/1
-
-</center>
+<center>Semestre 2022/1</center>
 
 <br>
 
-<center>
-
-Professor: Rodrigo Fileto Cuerci Maciel
-
-</center>
+<center>Professor: Rodrigo Fileto Cuerci Maciel</center>
 
 # Objetivos desta aula
 
@@ -75,7 +50,7 @@ Professor: Rodrigo Fileto Cuerci Maciel
 
 # Material de aula
 
-O Material desta aula bem como *scripts* utilizados encontram-se em [repositório aberto no Github](https://github.com/rodfileto-ufmg/ciencia_dados_inova/tree/main/03_cienciometria/apresenta%C3%A7%C3%A3o){target="_blank"}.
+O Material desta aula bem como *scripts* utilizados encontram-se em [repositório aberto no Github](https://github.com/rodfileto-ufmg/ciencia_dados_inova/tree/main/03_cienciometria){target="_blank"}.
 
 # Coleta de dados
 
@@ -83,16 +58,22 @@ Para as análises tanto no VOSviewer quanto no R utilizaremos dados coletados na
 
 # Estratégias de coleta
 
-- Tópico (Ex: "Complex Network");
-- Periódico (Ex: "Econometrica");
-- Agência de financiamento (EX: CAPES OR "Coordenação de Aperfeiçoamento de Pessoal de Nível Superior");
-- Dentre outros.
+-   Tópico (Ex: "Complex Network");
+-   Periódico (Ex: "Econometrica");
+-   Agência de financiamento (EX: CAPES OR "Coordenação de Aperfeiçoamento de Pessoal de Nível Superior");
+-   Dentre outros.
 
 Para os objetivos desta aula sugere-se coletar cerca de 4000 documentos no formato "plain text" incluindo as referências citadas.
 
 # VOSviewer
 
+-   Ferramenta desenvolvida para análise de dados bibliométricos. Possui API integrado para coleta de dados (*Microsoft Academic*, *CrossRef* e *Europe PMC*). Mais detalhes consultar as referências desta apresentação [@vaneck2010; @vaneck2011; @vaneck2017] bem como o [manual do usuário](https://www.vosviewer.com/documentation/Manual_VOSviewer_1.6.17.pdf){target="_blank"}.
 
+-   Também pode ser utilizada para visualização e análise de outros tipos de rede.
 
+# Cienciometria no R
+
+-   [BiblioMetrix](https://www.bibliometrix.org/){target="_blank"}: fornece instrumentos para elaboração de análises bibliométricas [@aria2017].
+-   Ou então, a partir das ferramentas disponíveis, pode-se elaborar uma nova análise. O [conjunto de scripts](https://github.com/rodfileto-ufmg/ciencia_dados_inova/tree/main/03_cienciometria/scripts){target="_blank"} presentes no repositório da disciplina elabora uma análise de ligação bibliográfica seguindo, em linhas gerais, os princípios elaborados por Waltman et. al. [-@waltman2020].
 
 # REFERÊNCIAS

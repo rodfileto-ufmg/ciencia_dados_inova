@@ -24,17 +24,63 @@ bib_coupling <- citing_cited %>%
   group_by(UT_x.x) %>%
   slice_max(order_by = weight, n = 20) %>%
   mutate(weight = weight/sum(weight)) %>%
-  filter(UT_x.x > UT_x.y) %>%
   ungroup()
 
 core <- read_csv("./03_cienciometria/dados/core.csv") %>%
   select(UT, TI, SO, PY, SC, WC) %>%
   filter(UT %in% c(bib_coupling$UT_x.x, bib_coupling$UT_x.y))
 
+#### Mapa de documentos ####
+
+colors <- data.frame(group = c("Biomedical and health sciences", "Life and earth sciences", "Mathematics and computer science",
+                               "Physical sciences and engineering", "Social sciences and humanities"), color_science = c("#19D400","#F5A511",
+                                                                                                                         "#8F00B3",
+                                                                                                                         "#0000FF","#BD0016"))
+
+map_doc <- core %>%
+  separate_rows(WC, sep = ";") %>%
+  mutate(WC = str_squish(tolower(WC))) %>% 
+  mutate(WC = gsub("\\&", "&", WC, fixed = TRUE)) %>%
+  left_join(fields, by = c("WC" = "Journal subject category")) %>%
+  mutate(id = paste0(UT,"_", Field), value = 1) %>% rename(group = Field) %>% left_join(colors) %>%
+  distinct(id, .keep_all = TRUE)
+
+
+network_doc <- bib_coupling %>%
+  filter(UT_x.x %in% core$UT & UT_x.y %in% core$UT) %>% 
+  left_join(map_doc, by = c("UT_x.x" = "UT")) %>%
+  left_join(map_doc, by = c("UT_x.y" = "UT")) %>% 
+  select(from = id.x, to = id.y, weight)
+
+
+map_doc <- map_doc %>%
+  distinct(id, group, color_science) %>%
+  mutate(group = case_when(is.na(group) ~ "Multidisciplinary",
+                           TRUE ~ as.character(group)),
+         color_science = case_when(is.na(color_science) ~ "#808080",
+                                   TRUE ~ as.character(color_science))) %>%
+  select(id, group, color_science)
+
+
+net_doc <- graph_from_data_frame(network_doc, vertices = map_doc)
+
+E(net_doc)$lty <- 0
+
+E(net_doc)$color <- "#FF000000"
+
+l <- layout_with_drl(net_doc)
+
+# png("./intelligence innovation/Output/shiny/RF/www/doc_net.png", width = 20, height = 20, res = 500, units = "in", bg="transparent")
+plot(net_doc, layout = l, vertex.label = NA,
+     vertex.color = adjustcolor(V(net_doc)$color_science, alpha.f = .8), vertex.size = 4, vertex.frame.color = "#FF000000")
+# dev.off()
+
+
+#### Clustering Process ####
 
 graph <- graph_from_data_frame(bib_coupling, vertices = core, directed = FALSE)
 
-#### Filter only the graph big component ####
+##### Filter only the graph big component ####
 components <- igraph::clusters(graph)
 
 biggest_cluster_id <- which.max(components$csize)
@@ -66,6 +112,26 @@ cluster_size <- new_core %>%
 
 hist(cluster_size$n)
 
+##### cluster similarity based on bibliographic coupling ####
+
+# cluster_similarity_bib_coupling <- citing_cited %>%
+#   inner_join(select(citing_cited, UT_x, UT_y), by = "UT_y") %>%
+#   filter(!(UT_x.x == UT_x.y)) %>%
+#   inner_join(select(new_core, UT, cluster), by = c("UT_x.x" = "UT")) %>%
+#   inner_join(select(new_core, UT, cluster), by = c("UT_x.y" = "UT")) %>%
+#   filter(cluster.x != cluster.y) %>%
+#   group_by(cluster.x, cluster.y) %>%
+#   summarise(weight = n()) %>%
+#   ungroup() %>%
+#   group_by(cluster.x) %>%
+#   slice_max(order_by = weight, n = 1) %>%
+#   mutate(weight = weight/sum(weight)) %>%
+#   ungroup()
+  
+  
+
+
+##### cluster similarity based on textual distance ####
 
 nounphrases <- read_csv("./03_cienciometria/dados/noun_phrases.csv") %>%
   inner_join(new_core) %>%
@@ -100,7 +166,6 @@ bm25 <- nounphrases %>%
   filter(!(noun_phrase %in% c("article", "paper", "objective", "year", "data", "conclusion", "work", "abstract", "research", "analysis"))) %>%
   arrange(cluster, noun_phrase)
 
-
 cluster_similarity <- bm25 %>%
   inner_join(bm25, by = "noun_phrase") %>%
   filter(cluster.x != cluster.y) %>%
@@ -112,10 +177,11 @@ cluster_similarity <- bm25 %>%
   mutate(bm25 = bm25/sum(bm25)) %>%
   slice_max(order_by = bm25, n = 20) %>%
   ungroup() %>%
-  filter(bm25 > 0)
+  filter(bm25 > 0) %>%
+  rename(weight = bm25)
 
 
-#### Most frequent science fields by cluster ####
+##### Clustering caracteristics ####
 
 avg_year <- new_core %>%
   filter(!(is.na(PY))) %>%
@@ -139,6 +205,7 @@ science <- new_core %>%
   slice_max(order_by = weight, n = 1) %>%
   select(-weight) %>%
   ungroup()
+
 
 category <- new_core %>%
   separate_rows(WC, sep = ";") %>%
@@ -192,60 +259,3 @@ write.table(cluster_similarity, "./03_cienciometria/dados/network_clusters.txt",
 rstudioapi::terminalExecute(glue::glue("java -jar VOSviewer.jar -map {normalizePath(getwd())}//03_cienciometria/dados/map_clusters.txt -network {normalizePath(getwd())}/03_cienciometria/dados/network_clusters.txt -largest_component -attraction 4 -repulsion -1"))
 
 
-#### Mapa de documentos ####
-
-map_doc <- subset(new_core, select = c("name", "community", "PY", "WC")) %>%
-  mutate(WC = gsub(" ", "", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub(" ", "", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub("LIBRARY;", "LIBRARY", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub("REMOTE;", "REMOTE", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub("COMPUTER;", "COMPUTER", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub("PHOTOGRAPHIC;", "PHOTOGRAPHIC", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub("CELL;BIOLOGY", "CELLBIOLOGY", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub("METALLURGICAL;", "METALLURGICAL", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub("MATERIALS;", "MATERIALS", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub("SOFTWARE;", "SOFTWARE", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub(";APPLICATIONS", "APPLICATIONS", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub("INFORMATION;", "INFORMATION", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub("&;", "", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub(";&", "", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub(",;", "", WC, fixed = TRUE)) %>%
-  mutate(WC = gsub(";;", ";", WC, fixed = TRUE)) %>%
-  cSplit("WC", sep = ";", direction = "long") %>%
-  mutate(WC = gsub("[^A-Za-z ]", "", WC)) %>%
-  mutate(WC = tolower(WC)) %>%
-  left_join(CWTS_Leiden_Ranking_2017_Main_fields) %>%
-  distinct(name, Field) %>%
-  filter(!(is.na(Field))) %>%
-  mutate(id = paste0(name,"_", Field), value = 1) %>% rename(group = Field) %>% left_join(colors)
-
-
-network_doc <- read_csv("./intelligence innovation/Data/full_graph.csv") %>%
-  filter(item1 %in% new_core$name & item2 %in% new_core$name) %>% left_join(map_doc, by = c("item1" = "name")) %>%
-  left_join(map_doc, by = c("item2" = "name")) %>% select(from = id.x, to = id.y, weight) %>% filter(!(is.na(from) | (is.na(to))))
-
-
-map_doc <- select(map_doc, id, group, color_science)
-
-
-net_doc <- graph_from_data_frame(network_doc, vertices = map_doc)
-E(net_doc)$lty <- 0
-
-E(net_doc)$color <- "#FF000000"
-
-system.time({
-  l <- layout_with_drl(net_doc)
-})
-
-png("./intelligence innovation/Output/shiny/RF/www/doc_net.png", width = 20, height = 20, res = 500, units = "in", bg="transparent")
-plot(net_doc, layout = l, vertex.label = NA,
-     vertex.color = adjustcolor(V(net_doc)$color_science, alpha.f = .8), vertex.size = 0.8, vertex.frame.color = "#FF000000")
-dev.off()
-
-
-
-  
-
-
-
-  
