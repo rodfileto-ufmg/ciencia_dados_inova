@@ -8,8 +8,8 @@ output:
     css: styles.css
     # reveal_plugins: ["zoom", "menu"]
     reveal_options:
-      width: 960
-      height: 768
+      width: 1280
+      height: 720
       slideNumber: true
       controls: false
 bibliography: references.bib
@@ -467,5 +467,221 @@ knitr::include_graphics("./imagens/SB.png")
 Ye e Bornmann [@ye2018] extenderam a metáfora da trajetória de citações para adicionar uma nova nomenclatura - garotas espertas (*smart girls)* - para denotar artigos que recebem citações imediatas com um rápido declínio. O termo foi duramente rebatido em editorial do periódico:
 
 *"There is no mythological grounding or justification for the use of the term. Rather, the label seems entirely a creation of the authors, building upon the previous sexualization of citation trajectories. As a result, the symbolism now relates intelligent women to short-lived scientific contributions and beautiful women to delayed recognition"*[@sugimoto2018].
+
+# Vieses de gênero na ciência
+
+-   Em ciênciometria, os estudos que abordam os vieses de gênero buscam medir e entender os fatores que diferenciam a produtividade de homens e mulheres na ciência.
+
+-   O que é mensurado?
+
+    -   O conceito de produtividade varia conforme o contexto.
+
+-   Quem é incluído em um estudo?
+
+    -   A composição da população varia conforme o campo (Ex: mulheres são minorias em campos tecnológicos enquanto são maioria em áreas de humanidades).
+
+## Nível de agregação importa
+
+Níveis agregados de análise podem exagerar algumas disparidades de gênero enquanto escondem outras [@nygaard2022].
+
+-   **Dados**: 17,878 pessoas cadastradas na *Norwegian Science Index, NSI* (2015-2017).
+
+-   **Unidade de análise**: pesquisadores individuais
+
+-   **Método estatístico**: análise bivariada tomando como "linha-base" os valores agregados e duas variáveis compostas (campo científico e posição acadêmica).
+
+<center>
+
+Variáveis dependentes
+
+</center>
+
+-   **Volume de publicações**:
+
+    -   \# publicações;
+
+    -   Proporção do autor;
+
+-   **Tipo de publicações**:
+
+    -   \% artigos;
+
+    -   \% capítulos;
+
+    -   \% monografias;
+
+-   **Autoria**:
+
+    -   Autories por publicação;
+
+    -   \% colaboração internacional;
+
+    -   Autoria individual;
+
+-   **Impacto ou qualidade**:
+
+    -   Publicações de "nível 2" (top-20%);
+
+    -   Publicações em inglês;
+
+    -   Média de citações;
+
+-   **Publicações Top-10% mais citadas**;
+
+<center>
+
+Principais resultados
+
+</center>
+
+```{r echo=FALSE, out.width="100%"}
+
+knitr::include_graphics("./imagens/results_gender_dif_agg.png")
+
+```
+
+## Tendência para publicar sozinh\@s?
+
+A pesquisa individual sinaliza claros sinais sobre a habilidade de pesquia evitando problema de alocação de crédito.
+
+-   **Dados**: 25.463 de cientistas Poloneses cadastrados no *Polish Science Observatory* (14.886 homens e 10.577 mulheres) que tivessem pelo menos uma publicação indexada na Scopus.
+
+-   **Unidade de análise**: pesquisadores individuais
+
+-   **Método estatístico**: Regressão logística para uma variável dependente fracional - **fração de pesquisa individual**.
+
+<center>
+
+Variáveis independentes
+
+</center>
+
+-   Idade biológica;
+
+-   grupo de idade;
+
+-   Gênero;
+
+-   Disciplina;
+
+-   Disciplinas *STEM* (abreviação para *Science, technology, engineering, and mathematics*);
+
+-   Outras disciplinas;
+
+-   Disciplinas dominadas por gênero;
+
+-   Média de prestígio por publicações;
+
+-   Instituição intensiva em pesquisa.
+
+<center>
+
+Resultados
+
+</center>
+
+O viés de gênero na Polônia é mais fraco que esperado: Segue-se uma tendência geral de pesquisa em equipe e internacional, diferenças de gênero em pesquisas individuais são mais fracas e menos relevantes que inicialmente assumido.
+
+## Viés de gênero na ciência brasileira
+
+Estudo considerando o universo de docentes da Universidade de São Paulo (USP) com dados enriquecidos da Web of Science, conclui-que
+
+"A produção científica na Universidade de São Paulo está sujeita a um viés de gênero. Dois terços do corpo docente são do gênero masculino, e as contratações das últimas décadas perpetuam esse padrão. A grande maioria dos membros com alto impacto no corpo docente é do sexo masculino." [@oliveira-ciabati2021, p. 55].
+
+
+<center> Variáveis analisadas </center>
+
+
+-   Índice H
+
+-   Número de publicações na Web of Science
+
+-   Total de citações
+
+-   Média de citações por item
+
+-   Média de citações por ano
+
+# Medidas de Interdisciplinaridade
+
+Algumas medidas de interdisciplinaridade científica são fornecidas por Porter e Rafols [-@porter2009]
+
+<center>
+
+Índice de Integração
+
+</center>
+
+$$
+I = 1 - \sum_{i,j}s_{ij} p_i p_j
+$$
+
+Onde \$s\_{ij}\$ é a matrix de similaridade entre as subdisciplinas científicas.
+
+<center>
+
+Índice de diversidade de Shannon
+
+</center>
+
+$$
+S = -\sum_{i}p_{i} \log {p_{i}}
+$$
+
+<center>
+
+Diversidade Herfindhal (complementar da concentração Herfindahl)
+
+</center>
+
+$$
+H = \sum_{i,j(i \neq j)}p_{i} p_{j} = 1 - \sum_{i}{p_{i}}^2
+$$
+
+# Altmetria
+
+Trata-se de um conjunto de métricas alternativas para entender a comunicação e impacto da ciência em ambientes online, como por exemplo, twitter, ResearchGate entre outros.
+
+Alguns exemplos de estudo sobre o tema:
+
+-   Correlação entre menções em mídias sociais e citações acadêmicas [@thelwall2013];
+
+-   Novas formas de difusão do conteúdo acadêmico para o público em geral [@twitter2022];
+
+-   Pontos positivos e negativos da comunicação científica no twitter [@rosenberg2020];
+
+-   Difusão de artigos retratadados. Aparentemente um caminho sem volta de informação posteriormente invalidada [@shamsi2022].
+
+## Outras análises baseadas em ambiente online
+
+Ambientes online oferecem ainda a oportunidade para entender outros fenômenos sociais.
+
+Por exemplo, Preis, Moat e Stanley [-@preis2013] analisaram flutuações de pesquisas de termos/páginas no google trends e Wikipedia, e encontraram que aumento na busca de informação precede a queda da bolsa de valores.
+
+Alanyali, Moat and Preis [-@alanyali2013] criaram um *corpus* de notícias do *Financial Times.* Concluíram que o volume de transações na bolsa de valores e mudança de preço de uma compania é correlacionado com menções da referida compania no noticiário. Entretanto, as análises não forneceram evidência com relação à direção da mudança de preço.
+
+# Avaliação de impacto de financiamento
+
+A relação entre financiamento e impacto de pesquisa (medidas através de citações) ainda possuem resultados ambíguos:
+
+-   Análise no nível dos documentos mostram uma associação positiva tanto para artigos científicos [@gök2016] quanto para patentes [@corredoira2018; @narin1997];
+
+-   Análises agregadas no nível nacional mostram diferentes resultados:
+
+    -   Redes financiadas pelos governos podem ter um impacto negativo na performance inovativa [@liang2018];
+
+    -   Quando controlado por outros fatores, o coeficiente de investimento em P&D se torna negativo para predizer citações; [@leydesdorff2019; @wagner2017; @wagner2018]
+
+## Fontes de dados de financiamento governamental
+
+-   [Dados abertos do CNPQ](http://dadosabertos.cnpq.br/pt_BR/dataset){target="_blank"};
+
+-   [Dados abertos da CAPES](https://dadosabertos.capes.gov.br/dataset){target="_blank"};
+
+-   Agências financiadoras por artigo:
+
+    -   Scielo através do API;
+    -   Web of Science, Scopus e CrossRef.
+
 
 # REFERÊNCIAS
