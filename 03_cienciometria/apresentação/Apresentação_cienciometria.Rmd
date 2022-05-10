@@ -23,49 +23,25 @@ library(kableExtra)
 
 ```
 
-<center>
+<center>UNIVERSIDADE FEDERAL DE MINAS GERAIS</center>
 
-UNIVERSIDADE FEDERAL DE MINAS GERAIS
-
-</center>
-
-<center>
-
-<medium>Centro de Desenvolvimento e Planejamento Regional</medium>
-
-</center>
+<center><medium>Centro de Desenvolvimento e Planejamento Regional</medium></center>
 
 <br>
 
-<center>
-
-CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO
-
-</center>
+<center>CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO</center>
 
 <br>
 
-<center>
-
-Módulo: **Cienciometria e análise de patentes**
-
-</center>
+<center>Módulo: **Cienciometria e análise de patentes**</center>
 
 <br>
 
-<center>
-
-Semestre 2022/1
-
-</center>
+<center>Semestre 2022/1</center>
 
 <br>
 
-<center>
-
-Professor: Rodrigo Fileto Cuerci Maciel
-
-</center>
+<center>Professor: Rodrigo Fileto Cuerci Maciel</center>
 
 # Objetivos desta aula
 
@@ -584,21 +560,15 @@ O viés de gênero na Polônia é mais fraco que esperado: Segue-se uma tendênc
 
 ## Viés de gênero na ciência brasileira
 
-Estudo considerando o universo de docentes da Universidade de São Paulo (USP) com dados enriquecidos da Web of Science, conclui-que
+Estudo considerando o universo de docentes da Universidade de São Paulo (USP) com dados enriquecidos da Web of Science, conclui-que "a produção científica na Universidade de São Paulo está sujeita a um viés de gênero. Dois terços do corpo docente são do gênero masculino, e as contratações das últimas décadas perpetuam esse padrão. A grande maioria dos membros com alto impacto no corpo docente é do sexo masculino." [@oliveira-ciabati2021, p. 55].
 
-"A produção científica na Universidade de São Paulo está sujeita a um viés de gênero. Dois terços do corpo docente são do gênero masculino, e as contratações das últimas décadas perpetuam esse padrão. A grande maioria dos membros com alto impacto no corpo docente é do sexo masculino." [@oliveira-ciabati2021, p. 55].
+<br>
 
-<<<<<<< HEAD
-
-<center> Variáveis analisadas </center>
-
-=======
 <center>
 
 Variáveis analisadas
 
 </center>
->>>>>>> 1077838b2c00ace7ccadb84a0695799c974c5fd6
 
 -   Índice H
 
@@ -609,6 +579,8 @@ Variáveis analisadas
 -   Média de citações por item
 
 -   Média de citações por ano
+
+Para operacionalizar análises de viés de gênero no contexto brasileiro, importante verificar o pacote no R [`genderBR`](https://cran.r-project.org/web/packages/genderBR/genderBR.pdf){target="_blank"}, o qual utiliza dados de primeiros nomes levantados pelo censo do IBGE.
 
 # Medidas de Interdisciplinaridade
 
@@ -624,7 +596,7 @@ $$
 I = 1 - \sum_{i,j}s_{ij} p_i p_j
 $$
 
-Onde \$s\_{ij}\$ é a matrix de similaridade entre as subdisciplinas científicas.
+Onde $s_{ij}$ é a matrix de similaridade entre as subdisciplinas científicas.
 
 <center>
 
@@ -654,7 +626,7 @@ Alguns exemplos de estudo sobre o tema:
 
 -   Correlação entre menções em mídias sociais e citações acadêmicas [@thelwall2013];
 
--   Novas formas de difusão do conteúdo acadêmico para o público em geral [@twitter2022];
+-   Novas formas de difusão do conteúdo acadêmico para o público em geral [@brainard2022];
 
 -   Pontos positivos e negativos da comunicação científica no twitter [@rosenberg2020];
 
@@ -666,7 +638,7 @@ Ambientes online oferecem ainda a oportunidade para entender outros fenômenos s
 
 Por exemplo, Preis, Moat e Stanley [-@preis2013] analisaram flutuações de pesquisas de termos/páginas no google trends e Wikipedia, e encontraram que aumento na busca de informação precede a queda da bolsa de valores.
 
-Alanyali, Moat and Preis [-@alanyali2013] criaram um *corpus* de notícias do *Financial Times.* Concluíram que o volume de transações na bolsa de valores e mudança de preço de uma compania é correlacionado com menções da referida compania no noticiário. Entretanto, as análises não forneceram evidência com relação à direção da mudança de preço.
+Alanyali, Moat and Preis [-@alanyali2013] criaram um *corpus* de notícias do *Financial Times.* Concluíram que o volume de transações na bolsa de valores e mudança de preço de uma empresa é correlacionado com menções da referida empresa no noticiário. Entretanto, as análises não forneceram evidência com relação à direção da mudança de preço.
 
 # Avaliação de impacto de financiamento
 
