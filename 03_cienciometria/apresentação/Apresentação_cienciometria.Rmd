@@ -588,9 +588,17 @@ Estudo considerando o universo de docentes da Universidade de São Paulo (USP) c
 
 "A produção científica na Universidade de São Paulo está sujeita a um viés de gênero. Dois terços do corpo docente são do gênero masculino, e as contratações das últimas décadas perpetuam esse padrão. A grande maioria dos membros com alto impacto no corpo docente é do sexo masculino." [@oliveira-ciabati2021, p. 55].
 
+<<<<<<< HEAD
 
 <center> Variáveis analisadas </center>
 
+=======
+<center>
+
+Variáveis analisadas
+
+</center>
+>>>>>>> 1077838b2c00ace7ccadb84a0695799c974c5fd6
 
 -   Índice H
 
@@ -674,14 +682,13 @@ A relação entre financiamento e impacto de pesquisa (medidas através de cita�
 
 ## Fontes de dados de financiamento governamental
 
--   [Dados abertos do CNPQ](http://dadosabertos.cnpq.br/pt_BR/dataset){target="_blank"};
+-   (Dados abertos do CNPQ)[[http://dadosabertos.cnpq.br/pt_BR/dataset]{target="_blank"}](http://dadosabertos.cnpq.br/pt_BR/dataset){.uri};
 
--   [Dados abertos da CAPES](https://dadosabertos.capes.gov.br/dataset){target="_blank"};
+-   (Dados abertos da CAPES)[[https://dadosabertos.capes.gov.br/dataset]{target="_blank"}](https://dadosabertos.capes.gov.br/dataset){.uri};
 
 -   Agências financiadoras por artigo:
 
     -   Scielo através do API;
     -   Web of Science, Scopus e CrossRef.
-
 
 # REFERÊNCIAS
