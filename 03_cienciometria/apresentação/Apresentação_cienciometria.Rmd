@@ -682,9 +682,9 @@ A relação entre financiamento e impacto de pesquisa (medidas através de cita�
 
 ## Fontes de dados de financiamento governamental
 
--   (Dados abertos do CNPQ)[[http://dadosabertos.cnpq.br/pt_BR/dataset]{target="_blank"}](http://dadosabertos.cnpq.br/pt_BR/dataset){.uri};
+-   [Dados abertos do CNPQ](http://dadosabertos.cnpq.br/pt_BR/dataset){target="_blank"};
 
--   (Dados abertos da CAPES)[[https://dadosabertos.capes.gov.br/dataset]{target="_blank"}](https://dadosabertos.capes.gov.br/dataset){.uri};
+-   [Dados abertos da CAPES](https://dadosabertos.capes.gov.br/dataset){target="_blank"};
 
 -   Agências financiadoras por artigo:
 
