@@ -23,25 +23,49 @@ library(kableExtra)
 
 ```
 
-<center>UNIVERSIDADE FEDERAL DE MINAS GERAIS</center>
+<center>
 
-<center><medium>Centro de Desenvolvimento e Planejamento Regional</medium></center>
+UNIVERSIDADE FEDERAL DE MINAS GERAIS
 
-<br>
+</center>
 
-<center>CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO</center>
+<center>
 
-<br>
+<medium>Centro de Desenvolvimento e Planejamento Regional</medium>
 
-<center>Módulo: **Cienciometria e análise de patentes**</center>
-
-<br>
-
-<center>Semestre 2022/1</center>
+</center>
 
 <br>
 
-<center>Professor: Rodrigo Fileto Cuerci Maciel</center>
+<center>
+
+CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO
+
+</center>
+
+<br>
+
+<center>
+
+Módulo: **Cienciometria e análise de patentes**
+
+</center>
+
+<br>
+
+<center>
+
+Semestre 2022/1
+
+</center>
+
+<br>
+
+<center>
+
+Professor: Rodrigo Fileto Cuerci Maciel
+
+</center>
 
 # Objetivos desta aula
 

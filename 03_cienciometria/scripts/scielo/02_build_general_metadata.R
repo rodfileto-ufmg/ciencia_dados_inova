@@ -48,26 +48,9 @@ documents_author %>%
 # DOI
 # Journal
 
-documents_dates <- foreach(file = as.vector(list.files(path = "./zip_data", full.names = TRUE)), .combine = bind_rows) %dopar% {
-  
-  documents_altmetrics <- read_csv(unz(file, "documents_dates.csv")) %>%
-    mutate_all(as.character)
-  
-}
+documents_dates <- future_map_dfr(.x = zip_files[3], ~read_csv(unz(.x, "documents_dates.csv")) %>%
+                                    mutate_all(as.character))
 
-general_data <- documents_dates %>%
-  select(scielo_id = `document publishing ID (PID SciELO)`,
-         ISSN_scielo = `ISSN SciELO`,
-         ISSN = `ISSN's`,
-         journal = `title at SciELO`,
-         type = `document type`,
-         year_submitted = `document submitted at year`,
-         year_accepted = `document accepted at year`,
-         year_published = `document published at year`,
-         year_published_scielo = `document published in SciELO at year`,
-         subject = `title thematic areas`
-         ) %>%
-  distinct()
 
 
 

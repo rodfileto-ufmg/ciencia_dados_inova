@@ -2,7 +2,7 @@ library(rvest)
 library(tidyverse)
 library(RCurl)
 library(furrr)
-# library(httr)
+
 
 
 page <- read_html("https://analytics.scielo.org/w/reports")
