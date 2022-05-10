@@ -31,7 +31,7 @@ documents_languages <- future_map_dfr(.x = zip_files[3], ~read_csv(unz(.x, "docu
 #          language = `document languages`)
 
 
-#### Document Author
+#### Documents Authors
  
 documents_author <- future_map_dfr(.x = zip_files[3], ~read_csv(unz(.x, "documents_authors.csv")) %>%
                                      mutate_all(as.character))
@@ -42,11 +42,7 @@ documents_author %>%
   count(`document author affiliation country`, sort = TRUE)
   
 
-#### General metadata #####
-
-# Scielo ID
-# DOI
-# Journal
+#### documents dates #####
 
 documents_dates <- future_map_dfr(.x = zip_files[3], ~read_csv(unz(.x, "documents_dates.csv")) %>%
                                     mutate_all(as.character))
