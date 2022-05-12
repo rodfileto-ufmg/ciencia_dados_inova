@@ -23,49 +23,25 @@ library(kableExtra)
 
 ```
 
-<center>
+<center>UNIVERSIDADE FEDERAL DE MINAS GERAIS</center>
 
-UNIVERSIDADE FEDERAL DE MINAS GERAIS
-
-</center>
-
-<center>
-
-<medium>Centro de Desenvolvimento e Planejamento Regional</medium>
-
-</center>
+<center><medium>Centro de Desenvolvimento e Planejamento Regional</medium></center>
 
 <br>
 
-<center>
-
-CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO
-
-</center>
+<center>CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO</center>
 
 <br>
 
-<center>
-
-Módulo: **Cienciometria e análise de patentes**
-
-</center>
+<center>Módulo: **Cienciometria e análise de patentes**</center>
 
 <br>
 
-<center>
-
-Semestre 2022/1
-
-</center>
+<center>Semestre 2022/1</center>
 
 <br>
 
-<center>
-
-Professor: Rodrigo Fileto Cuerci Maciel
-
-</center>
+<center>Professor: Rodrigo Fileto Cuerci Maciel</center>
 
 # Objetivos desta aula
 
@@ -512,7 +488,7 @@ Variáveis dependentes
 
 -   **Autoria**:
 
-    -   Autories por publicação;
+    -   Autores por publicação;
 
     -   \% colaboração internacional;
 
@@ -526,7 +502,7 @@ Variáveis dependentes
 
     -   Média de citações;
 
--   **Publicações Top-10% mais citadas**;
+    -   Publicações Top-10% mais citadas;
 
 <center>
 
@@ -542,7 +518,7 @@ knitr::include_graphics("./imagens/results_gender_dif_agg.png")
 
 ## Tendência para publicar sozinh\@s?
 
-A pesquisa individual sinaliza claros sinais sobre a habilidade de pesquia evitando problema de alocação de crédito.
+A pesquisa individual sinaliza claros sinais sobre a habilidade de pesquisa evitando problema de alocação de crédito.
 
 -   **Dados**: 25.463 de cientistas Poloneses cadastrados no *Polish Science Observatory* (14.886 homens e 10.577 mulheres) que tivessem pelo menos uma publicação indexada na Scopus.
 
@@ -584,7 +560,7 @@ O viés de gênero na Polônia é mais fraco que esperado: Segue-se uma tendênc
 
 ## Viés de gênero na ciência brasileira
 
-Estudo considerando o universo de docentes da Universidade de São Paulo (USP) com dados enriquecidos da Web of Science, conclui-que "a produção científica na Universidade de São Paulo está sujeita a um viés de gênero. Dois terços do corpo docente são do gênero masculino, e as contratações das últimas décadas perpetuam esse padrão. A grande maioria dos membros com alto impacto no corpo docente é do sexo masculino." [@oliveira-ciabati2021, p. 55].
+Estudo considerando o universo de docentes da Universidade de São Paulo (USP) com dados enriquecidos da Web of Science, conclui que *"a produção científica na Universidade de São Paulo está sujeita a um viés de gênero. Dois terços do corpo docente são do gênero masculino, e as contratações das últimas décadas perpetuam esse padrão. A grande maioria dos membros com alto impacto no corpo docente é do sexo masculino."* [@oliveira-ciabati2021, p. 55].
 
 <br>
 
