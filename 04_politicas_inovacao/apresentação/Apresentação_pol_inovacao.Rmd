@@ -1,0 +1,194 @@
+---
+title: ""
+author: ""
+# date: March 22, 2005
+output: 
+  revealjs::revealjs_presentation:
+    code_folding: hide
+    self_contained: true
+    css: styles.css
+    # reveal_plugins: ["zoom", "menu"]
+    reveal_options:
+      width: 1280
+      height: 720
+      slideNumber: true
+      controls: false
+bibliography: references.bib
+csl: abnt.csl
+---
+
+```{r echo=TRUE, include=FALSE}
+
+library(tidyverse)
+library(ggplot2)
+library(highcharter)
+
+
+```
+
+<center>
+
+UNIVERSIDADE FEDERAL DE MINAS GERAIS
+
+</center>
+
+<center>
+
+<medium>Centro de Desenvolvimento e Planejamento Regional</medium>
+
+</center>
+
+<br>
+
+<center>
+
+CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO
+
+</center>
+
+<br>
+
+<center>
+
+Módulo: **Sistemas e políticas de inovação**
+
+</center>
+
+<br>
+
+<center>
+
+Semestre 2022/1
+
+</center>
+
+<br>
+
+<center>
+
+Professor: Rodrigo Fileto Cuerci Maciel
+
+</center>
+
+# Objetivos desta aula
+
+-   Apresentar conceitos de sistema de inovação e políticas de inovação;
+
+-   Trazer especificamente conceitos de compras públicas para inovação.
+
+# Material de aula
+
+O Material desta aula bem como *scripts* utilizados encontram-se em [repositório aberto no Github](https://github.com/rodfileto-ufmg/ciencia_dados_inova/tree/main/03_cienciometria/apresenta%C3%A7%C3%A3o){target="_blank"}.
+
+# Tópicos
+
+1.  Sistemas Nacionais de Inovação;
+
+2.  Sistemas Setoriais de Inovação;
+
+3.  Abordagem de hélice tripla;
+
+4.  Políticas de Inovação;
+
+5.  Compras públicas para fomento de inovação.
+
+# Sistemas Nacionais de Inovação
+
+A abordagem dos Sistemas Nacionais de Inovação consideram o contexto nacional como elemento específico e importante para a criação e absorção de conhecimento. Como consequência, países serão diferentes em seus processos de desenvolvimento e difusão de conhecimento.
+
+A evolução técnica vem acompanhada de um processo de transformação
+social que congrega a diversidade de atores sociais e cenários
+políticos e econômicos próprios de uma nação. Ou seja, existe um
+arcabouço legal e cultural específico que potencializa, seleciona
+e/ou inibe a difusão de conhecimento técnico necessário para o
+processo de inovação [@freeman1997].
+
+No livro de Ciência e Tecnologia [@rapini2021] a parte 3 se concentra em discutir conceitos e elementos de um Sistema Nacional de Inovação.
+
+*"No Estado industrial a indústria das massas é iluminada pela ciência, e as ciências e as artes são apoiadas pelas indústrias das massas. [...] Nenhum progresso, nenhuma descoberta e invenção, pode ser feita nessas ciências pelo qual centenas de indústrias e processos não possam ser alterados ou melhorados. [...] Os efeitos desses melhoramentos são logo depois estendidos mesmo para a agricultura."* ([@list2011, p. 100, tradução nossa]
+
+## Política de internacionalização de cientistas
+
+Robinson-Garcia e Rafols [-@robinson-garcia2019] explicam como diferentes contextos nacionais tratam o processo de internacionalização da ciência de forma diferente.
+
+## Política de internacionalização de cientistas
+
+Colaboração internacional e publicação em inglês aumenta a visibilidade das publicações. Isto gera um maior número de citações [@wagner2017; @leydesdorff2019].
+
+Entretanto, outras considerações podem ser discutidas:
+
+-   Capacidade nacional para desenvolver conhecimento científico de forma independente.
+
+-   Subordinação às agendas de pesquisas de grandes centros;
+
+## Fomento para publicar em inglês
+
+A proporção de publicações em inglês de um dado país é tomada como uma aproximação para analisar a internacionalização científica. Porém, como os dados disponíveis em grandes base de dados são em inglês (Web of Science, Scopus e etc.), uma análise neste sentido pode sofrer do viés de seleção.
+
+-   Isso afeta especialmente as ciências sociais uma vez que possuem tendência para publicação em jornais locais e para audiências mais diversificadas.
+
+----------------------------------------------------
+
+### Fração de publicações em inglês no Scielo por área científica
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, out.width="100%"}
+
+document_language <- read_csv("./dados/document_language.csv") %>%
+  filter(year_published_scielo <= 2021 & (!(is.na(subject))))
+
+hchart(document_language, "line", hcaes(x = year_published_scielo, y = round(100*(prop), digits = 2), group = subject)) %>%
+  hc_yAxis(labels = list(format = "{value}%", style = list(color = "#525151",
+                                                           font= '15px Helvetica',
+                                                           fontWeight = "bold")), title = list(text = "")) %>%
+  hc_xAxis(title = list(text = ""), labels = list(style = list(color = "#525151",
+                                                               font= '15px Helvetica',
+                                                               fontWeight = "bold"
+                                                           )))
+
+```
+
+
+<details><summary>Clique aqui para ver o código deste gráfico</summary>
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
+
+library(highcharter)
+
+# https://jkunst.com/highcharter/
+
+document_language <- read_csv("./dados/document_language.csv") %>%
+  filter(year_published_scielo <= 2021 & (!(is.na(subject))))
+  
+hchart(document_language, "line", hcaes(x = year_published_scielo, y = round(100*(prop), digits = 2), group = subject)) %>%
+  hc_yAxis(labels = list(format = "{value}%"), title = list(text = "")) %>%
+  hc_xAxis(title = list(text = ""))
+
+
+
+```
+
+</details>
+
+
+
+
+## Mobilização internacional de diferentes ângulos
+
+Diferentes contextos políticos se referindo ao mesmo fenômeno pode levar para a seleção de diferentes indicadores.
+
+-   **União Européia**: ênfase na circulação de cérebros (*brain-circulation*) e promoção de trânsferência de conhecimento entre estados membros;
+
+-   **Estados Unidos**: Mobilidade relacionada com aquisição de cérebros (*brain-gain*), ou seja, capacidade de atração de cientistas altamente qualificados.
+
+-   **Países menos desenvolvidos**: Risco de evasão de cérebros (*brain-drain*) devido à condições menos atrativas de retenção de cientistas altamente qualificados.
+
+# Sistemas Setoriais de Inovação
+
+# Hélice Tripla
+
+# Políticas de Inovação
+
+# Compras públicas para inovação
+
+# REFERÊNCIAS
