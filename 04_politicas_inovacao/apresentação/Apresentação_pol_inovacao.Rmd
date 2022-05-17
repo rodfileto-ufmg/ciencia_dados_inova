@@ -36,15 +36,7 @@ library(highcharter)
 
 <br>
 
-<<<<<<< HEAD
 <center>Módulo: **Políticas de inovação**</center>
-=======
-<center>
-
-Módulo: **Políticas de inovação**
-
-</center>
->>>>>>> 13ed97a5daba815498bf3544e6e4ff393b050e4d
 
 <br>
 
@@ -136,15 +128,12 @@ Fonte: [@edler2017, p.12]
 
 2.  Tratando políticas como ferramentas dispostas numa caixa;
 
-<<<<<<< HEAD
 3.  Muita fé no design racional e coordenação;
 
 4.  Abordagem atemporal para a análise política: pesquisadores de inovação discorrem sobre a importância do travamento na trajetória (*path dependency*) porém raramente consideram processos políticos com essa perspectiva.
 
-# Contexto importa: Política de internacionalização de cientistas
-=======
+
 ## Contexto importa: Política de internacionalização de cientistas
->>>>>>> 13ed97a5daba815498bf3544e6e4ff393b050e4d
 
 Robinson-Garcia e Rafols [-@robinson-garcia2019] explicam como diferentes contextos nacionais tratam o processo de internacionalização da ciência de forma diferente.
 
@@ -211,11 +200,7 @@ hchart(document_language, "line", hcaes(x = year_published_scielo, y = round(100
 
 </details>
 
-<<<<<<< HEAD
-### Mobilização internacional de diferentes ângulos
-=======
 ## Mobilização internacional de diferentes ângulos
->>>>>>> 13ed97a5daba815498bf3544e6e4ff393b050e4d
 
 Diferentes contextos políticos se referindo ao mesmo fenômeno pode levar para a seleção de diferentes indicadores.
 
@@ -226,7 +211,6 @@ Diferentes contextos políticos se referindo ao mesmo fenômeno pode levar para 
 -   **Países menos desenvolvidos**: Risco de evasão de cérebros (*brain-drain*) devido à condições menos atrativas de retenção de cientistas altamente qualificados.
 
 # Compras públicas para inovação
-<<<<<<< HEAD
 
 Trata-se de investimento governamental, através de compras ou expectativa de compras, induzindo a inovação seja através de especificação de níveis de performance não atendidos pelos produtos ou processos existentes, seja através do apoio de P&D para produtos e processos que serão adquiridos posteriormente. Exclui-se dessa modalidade o incentivo à P&D quando a agência do governo não tem a intenção de comprar [@vonortas2015].
 
@@ -257,7 +241,5 @@ serviço ou processo inovador**.*
 - [Portal da Transparência do Governo Federal](https://portaldatransparencia.cgu.gov.br/){target="_blank"}
 
 - [Gastos governamentais dos Estados Unidos](<https://www.usaspending.gov/>[){target="\_blank"};](http://dadosabertos.cnpq.br/pt_BR/dataset){target="_blank"};)
-=======
->>>>>>> 13ed97a5daba815498bf3544e6e4ff393b050e4d
 
 # REFERÊNCIAS
