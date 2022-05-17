@@ -26,49 +26,25 @@ library(highcharter)
 
 ```
 
-<center>
+<center>UNIVERSIDADE FEDERAL DE MINAS GERAIS</center>
 
-UNIVERSIDADE FEDERAL DE MINAS GERAIS
-
-</center>
-
-<center>
-
-<medium>Centro de Desenvolvimento e Planejamento Regional</medium>
-
-</center>
+<center><medium>Centro de Desenvolvimento e Planejamento Regional</medium></center>
 
 <br>
 
-<center>
-
-CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO
-
-</center>
+<center>CIÊNCIA DE DADOS PARA ESTUDOS EM INOVAÇÃO</center>
 
 <br>
 
-<center>
-
-Módulo: **Políticas de inovação**
-
-</center>
+<center>Módulo: **Políticas de inovação**</center>
 
 <br>
 
-<center>
-
-Semestre 2022/1
-
-</center>
+<center>Semestre 2022/1</center>
 
 <br>
 
-<center>
-
-Professor: Rodrigo Fileto Cuerci Maciel
-
-</center>
+<center>Professor: Rodrigo Fileto Cuerci Maciel</center>
 
 # Objetivos desta aula
 
@@ -118,13 +94,11 @@ Diferentes setores implicam em diferentes lógicas de desenvolvimento e experiê
 
 # Políticas de Inovação
 
-Diferenciação feita por Bittencourt e Rauen entre política de inovação implícita e explícita
+Diferenciação feita por Bittencourt e Rauen  [-@bittencourt2021, p. 523] entre política de inovação implícita e explícita
 
--   **Política de inovação explícita**: formas direta de participação governamental com "instrumentos de fomento creditício, investimento direto, subvenção, criação de infraestrutura" [@bittencourt2021, p. 523] bem como outros meios que estimulem e/ou regulem a invenção e difusão de conhecimento científico e tecnológico pela sociedade.
--   **Política de inovação implícita:** aquelas que impactariam as atividades de invenção e difusão de conhecimento "a partir dos grandes objetivos macro e
-    microeconômicos nacionais. [...] expressas pela política fiscal e
-    monetária, pelas estratégias educacionais, pela orientação
-    diplomática, pelas regras de controle e accountability, etc."
+-   **Política de inovação explícita**: formas direta de participação governamental com "instrumentos de fomento creditício, investimento direto, subvenção, criação de infraestrutura" bem como outros meios que estimulem e/ou regulem a invenção e difusão de conhecimento científico e tecnológico pela sociedade.
+
+-   **Política de inovação implícita:** aquelas que impactariam as atividades de invenção e difusão de conhecimento "a partir dos grandes objetivos macro e microeconômicos nacionais. [...] expressas pela política fiscal e monetária, pelas estratégias educacionais, pela orientação diplomática, pelas regras de controle e accountability, etc."
 
 ## Classificação de políticas de inovação
 
@@ -148,9 +122,17 @@ knitr::include_graphics("./imagens/inst_pol_inovacao.jpg")
 
 Fonte: [@edler2017, p.12]
 
-## Cuidados ao analisar políticas de inovação
+## Perigos ao analisar políticas de inovação
 
-## Contexto importa: Política de internacionalização de cientistas
+1.  Idealizando racionalidades e tomadores de decisão: Assim como se rejeitou a firma representativa (em uma perspectiva evolucionária) não há que se considerar um tomador de decisão representativo.
+
+2.  Tratando políticas como ferramentas dispostas numa caixa;
+
+3.  Muita fé no design racional e coordenação;
+
+4.  Abordagem atemporal para a análise política: pesquisadores de inovação discorrem sobre a importância do travamento na trajetória (*path dependency*) porém raramente consideram processos políticos com essa perspectiva.
+
+# Contexto importa: Política de internacionalização de cientistas
 
 Robinson-Garcia e Rafols [-@robinson-garcia2019] explicam como diferentes contextos nacionais tratam o processo de internacionalização da ciência de forma diferente.
 
@@ -172,7 +154,7 @@ A proporção de publicações em inglês de um dado país é tomada como uma ap
 
 ------------------------------------------------------------------------
 
-### Fração de publicações em inglês no Scielo por área científica
+## Fração de publicações em inglês no Scielo por área científica
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, out.width="100%"}
 
@@ -217,16 +199,46 @@ hchart(document_language, "line", hcaes(x = year_published_scielo, y = round(100
 
 </details>
 
-## Mobilização internacional de diferentes ângulos
+### Mobilização internacional de diferentes ângulos
 
 Diferentes contextos políticos se referindo ao mesmo fenômeno pode levar para a seleção de diferentes indicadores.
 
--   **União Européia**: ênfase na circulação de cérebros (*brain-circulation*) e promoção de trânsferência de conhecimento entre estados membros;
+-   **União Européia**: ênfase na circulação de cérebros (*brain-circulation*) e promoção de transferência de conhecimento entre estados membros;
 
 -   **Estados Unidos**: Mobilidade relacionada com aquisição de cérebros (*brain-gain*), ou seja, capacidade de atração de cientistas altamente qualificados.
 
 -   **Países menos desenvolvidos**: Risco de evasão de cérebros (*brain-drain*) devido à condições menos atrativas de retenção de cientistas altamente qualificados.
 
 # Compras públicas para inovação
+
+Trata-se de investimento governamental, através de compras ou expectativa de compras, induzindo a inovação seja através de especificação de níveis de performance não atendidos pelos produtos ou processos existentes, seja através do apoio de P&D para produtos e processos que serão adquiridos posteriormente. Exclui-se dessa modalidade o incentivo à P&D quando a agência do governo não tem a intenção de comprar [@vonortas2015].
+
+Caso existam restrições governamentais para aquisição de produtos ou processos de empresas estrangeiras, a aquisição pública serve como uma barreira comercial não tarifária. Além disso, assegura-se a capacidade nacional em determinado setor [@braman2006].
+
+## Compras públicas para inovação no Brasil
+
+-   Definição dada pelo [Programa Espacial Brasileiro](https://www.gov.br/aeb/pt-br/programa-espacial-brasileiro/encomenda-tecnologica-etec){target="_blank"}:
+
+*A Encomenda Tecnológica, também conhecida como ETEC, é um instrumento de
+compra pública de inovação, caracterizada pelo estímulo à inovação nas
+empresas. Por meio dela, os órgãos e as entidades da administração
+pública poderão contratar diretamente ICT pública ou privada, entidades
+de direito privado sem fins lucrativos ou empresas , isoladamente ou em
+consórcio, voltadas para atividades de pesquisa e de reconhecida
+capacitação tecnológica no setor, com vistas à realização de atividades
+de pesquisa, desenvolvimento e inovação que envolvam **risco tecnológico**,
+para **solução de problema técnico específico** ou **obtenção de produto,
+serviço ou processo inovador**.*
+
+-   Definição dada pelo [Tribunal de Contas da União](https://portal.tcu.gov.br/encomenda-tecnologica-etec.htm){target="_blank"}:
+
+*A ETEC pode ser adotada em situações de **falha de mercado** e alto nível de incerteza, ou seja, quando o Estado se depara com um problema ou uma necessidade cuja solução não é conhecida ou não está disponível e envolve risco tecnológico. Nesse tipo de situação, a Administração Pública pode apresentar o problema para o mercado e identificar potenciais interessados em investir no desenvolvimento da solução. São identificados os potenciais interessados que apresentam maior probabilidade de sucesso, com possibilidade de contratação de mais de um.*
+
+
+## Bases de dados de compras públicas governamentais
+
+- [Portal da Transparência do Governo Federal](https://portaldatransparencia.cgu.gov.br/){target="_blank"}
+
+- [Gastos governamentais dos Estados Unidos](<https://www.usaspending.gov/>[){target="\_blank"};](http://dadosabertos.cnpq.br/pt_BR/dataset){target="_blank"};)
 
 # REFERÊNCIAS
