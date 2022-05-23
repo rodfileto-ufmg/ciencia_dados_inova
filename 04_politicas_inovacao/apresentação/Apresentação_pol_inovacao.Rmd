@@ -139,7 +139,7 @@ Robinson-Garcia e Rafols [-@robinson-garcia2019] explicam como diferentes contex
 
 ## Política de internacionalização de cientistas
 
-Colaboração internacional e publicação em inglês aumenta a visibilidade das publicações. Isto gera um maior número de citações [@wagner2017; @leydesdorff2019].
+Colaboração internacional e publicação em inglês aumentam a visibilidade das publicações. Isto gera um maior número de citações [@wagner2017; @leydesdorff2019].
 
 Entretanto, outras considerações podem ser discutidas:
 
@@ -240,6 +240,6 @@ serviço ou processo inovador**.*
 
 - [Portal da Transparência do Governo Federal](https://portaldatransparencia.cgu.gov.br/){target="_blank"}
 
-- [Gastos governamentais dos Estados Unidos](<https://www.usaspending.gov/>[){target="\_blank"};](http://dadosabertos.cnpq.br/pt_BR/dataset){target="_blank"};)
+- [Gastos governamentais dos Estados Unidos](<https://www.usaspending.gov/>){target="_blank"}
 
 # REFERÊNCIAS
