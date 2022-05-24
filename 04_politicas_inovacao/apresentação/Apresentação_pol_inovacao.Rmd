@@ -181,7 +181,22 @@ hchart(document_language, "line", hcaes(x = year_published_scielo, y = round(100
 
 </summary>
 
-```{r echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
+```{r echo=TRUE, message=FALSE, warning=FALSE, results='hide', eval=FALSE}
+
+document_language <- tbl(db, "document_language") %>% inner_join(tbl(db, "document_general_data")) %>%
+  collect() %>%
+  separate_rows(subject, sep = ";") %>%
+  distinct(scielo_id, language, subject, year_published_scielo) %>%
+  mutate(language = ifelse(!(language %in% c("en")) | (is.na(language)), "outros", language)) %>%
+  # group_by(scielo_id, language) %>%
+  # mutate(frac = 1 / n()) %>%
+  # ungroup() %>%
+  group_by(year_published_scielo, subject, language) %>%
+  summarise(prop = n()) %>%
+  ungroup() %>%
+  group_by(year_published_scielo, subject) %>% # Aqui estava errado. Agrupando apenas pelo ano
+  mutate(prop = prop/sum(prop)) %>%
+  filter(!(language == "outros") & year_published_scielo > 1980)
 
 library(highcharter)
 
