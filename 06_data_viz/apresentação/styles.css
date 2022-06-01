@@ -1,0 +1,65 @@
+.reveal section p {
+  
+  text-align: justify;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6{
+  margin: 0 0 20px 0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  line-height: 1.3em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: none;
+  font-size: 50px;
+  font-weight: bold;
+}
+  
+  .slide {
+    height: 720px;
+    overflow-y: auto !important;
+}
+
+div .csl-entry {
+  
+  text-align: left;
+  margin-bottom: 30px;
+  
+}
+
+#left-3 {
+  left:-8.33%;
+  text-align: left;
+  float: left;
+  width:33.33%;
+  z-index:-10;
+}
+
+
+#center-3 {
+  text-align: center;
+  display: inline-block;
+  width:33.33%;
+  z-index:-10;
+}
+
+#right-3 {
+  float: right;
+  text-align: right;
+  width:33.33%;
+  z-index:-10;
+}
+
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  box-shadow: none; 
+  }
+  
